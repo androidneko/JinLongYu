@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/app_name"
+    android:requireDeviceUnlock="false"
+    android:apduServiceBanner="@mipmap/icon">
+
+    <!--<aid-group-->
+        <!--android:category="other"-->
+        <!--android:description="@string/app_name" >-->
+        <!--&lt;!&ndash;<aid-filter android:name="D2760000850100" />&ndash;&gt;-->
+        <!--&lt;!&ndash;<aid-filter android:name="D2760000850101" />&ndash;&gt;-->
+        <!--&lt;!&ndash;<aid-filter android:name="3F00" />&ndash;&gt;-->
+        <!--&lt;!&ndash;<aid-filter android:name="A00000039656434103C3C5" />&ndash;&gt;-->
+        <!--&lt;!&ndash;<aid-filter android:name="A00000039656434103C3C50000000000" />&ndash;&gt;-->
+    <!--</aid-group>-->
+
+</host-apdu-service>

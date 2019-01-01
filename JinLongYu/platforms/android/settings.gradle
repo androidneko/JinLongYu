@@ -1,0 +1,7 @@
+//include ':MultiImageSelector'
+// GENERATED FILE - DO NOT EDIT
+include ":"
+include ":CordovaLib"
+include ":acnet"
+include ":acwidgets"
+include ":utilities"

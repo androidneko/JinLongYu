@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">益海嘉里金龙鱼</string>
+    <string name="launcher_name">@string/app_name</string>
+    <string name="activity_name">@string/launcher_name</string>
+    <string name="request_permissions_prompt">您拒绝了应用必需的权限，如果您不授予这些权限应用将无法正常使用。</string>
+    <string name="request_location_prompt">位置服务还未开启，需要开启位置服务！</string>
+    <string name="button_cacel">取消</string>
+    <string name="button_ok">好的</string>
+    <string name="button_gps_open_later">稍后开启</string>
+    <string name="button_gps_open">立即开启</string>
+    <string name="grant_permission_prompt">您必须授权才能正常使用该功能！</string>
+    <string name="wechat">微信</string>
+    <string name="wechat_friend">微信朋友圈</string>
+    <string name="qq">QQ</string>
+    <string name="qq_zone">QQ空间</string>
+    <string name="nfc_notice">NFC功能未启用！</string>
+</resources>

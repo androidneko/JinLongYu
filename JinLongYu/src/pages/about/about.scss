@@ -1,0 +1,35 @@
+page-about {
+    //设置背景颜色
+    ion-content{
+        .fixed-content{
+            background: rgba($color: #000000, $alpha: 0) !important;
+        }
+        .scroll-content{
+            background: rgba($color: #000000, $alpha: 0) !important;
+        }
+        background: color($colors,ty-partingline) !important;
+    }
+    .lo{
+        margin: 20px;
+        width: 130px;
+        height: 130px;
+     }
+     .ver{
+         margin: 0px;
+     }
+
+     .update-item{
+        .item-icon
+        {
+            background: url(../assets/imgs/check_update.png) no-repeat center !important;
+            background-size:100% 90% !important; 
+        }
+    }
+    .contact-item{
+        .item-icon
+        {
+            background: url(../assets/imgs/contact-us.png) no-repeat center !important;
+            background-size:100% 90% !important;
+        }
+    }
+}

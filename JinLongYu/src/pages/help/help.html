@@ -1,0 +1,88 @@
+<!--
+  Generated template for the HelpUsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <div class="topOffset"></div>
+    <ion-toolbar color="primary">
+      <button ion-button clear small navPop>
+        <ion-icon ios="ios-backwhite"></ion-icon>
+      </button>
+      <ion-title>使用帮助</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  
+  <ion-content no-padding style="background:#f2f2f2">
+    <ion-list no-lines style="background:white">
+      <ion-item text-wrap (click)="tag1Click()">
+        <div item-left class="question">Q</div>
+        
+        <p class="p-question">什么情况下会提示申请OA流程呢?</p>
+        <ion-icon name="{{tag1}}" color="red" item-end></ion-icon>
+      </ion-item>
+      <div class="line"></div>
+      <ion-item text-wrap *ngIf="tag1=='ios-arrow-up'">
+          <div item-left class="answer">A</div>
+        <p class="p-answer">当提交员工基本信息后，后台会自动匹配提交的员工基本信息，如果后台系统没有匹配到该员工信息，APP就会提示申请OA流程。</p>
+        <p class="p-answer"> 特殊说明：</p>
+        <p class="p-answer">1.新员工当信息没录入时，也会有该提示，可以等待后台系统录入信息后点击“立即开通”填写信息提交后即可开通成功。一般新员工7个工作日内信息即可录入。</p>
+        <p class="p-answer">2.天喻信息的子公司员工需要申请OA流程，才可以开通成功。</p>
+      </ion-item>
+      <div class="ty-line15"></div>
+  
+      <ion-item text-wrap (click)="tag2Click()">
+          <div item-left class="question">Q</div>
+        <p class="p-question">打卡记录中的考勤记录为啥与人资考勤不符?</p>
+        <ion-icon name="{{tag2}}" color="gray_text" item-end></ion-icon>
+      </ion-item>
+      <div class="line"></div>
+      <ion-item text-wrap *ngIf="tag2=='ios-arrow-up'">
+          <div item-left class="answer">A</div>
+        <p class="p-answer">打卡记录会记录考勤，目前仅支持显示门禁卡和移动端刷卡记录，研发中心指纹打卡不会显示其中，因此，考勤记录最终以人资输出的考勤表为准。</p>
+      </ion-item>
+      <div class="ty-line15"></div>
+  
+      <ion-item text-wrap (click)="tag3Click()">
+          <div item-left class="question">Q</div>
+        <p class="p-question">食堂消费本月支出为啥与实际扣费不一样?</p>
+        <ion-icon name="{{tag3}}" color="gray_text" item-end></ion-icon>
+      </ion-item>
+      <div class="line"></div>
+      <ion-item text-wrap *ngIf="tag3=='ios-arrow-up'">
+          <div item-left class="answer">A</div>
+        <p class="p-answer">食堂消费有移动端消费和实体卡消费，目前两者并没有联动，因此移动端食堂消费记录只记录移动端消费，最终扣费是本月移动端消费与实体卡消费的总和。</p>
+      </ion-item>
+      <div class="ty-line15"></div>
+  
+      <ion-item text-wrap (click)="tag4Click()">
+          <div item-left class="question">Q</div>
+        <p class="p-question">使用本APP有哪些注意事项?</p>
+        <ion-icon name="{{tag4}}" color="gray_text" item-end></ion-icon>
+      </ion-item>
+      <div class="line"></div>
+      <ion-item text-wrap *ngIf="tag4=='ios-arrow-up'">
+          <div item-left class="answer">A</div>
+          <p class="p-answer">1.本APP是基于NFC-HCE技术。目前可支持5.0以上的具备NFC功能的Android手机。</p>
+          <p class="p-answer">2.APP员工电子卡的应用要求必须授予存储和手机/电话权限，来存储个人化数据和获取手机唯一标识。</p>
+          <p class="p-answer">3.您的员工电子卡个人化数据就是该APP的灵魂，卸载APP将导致丢失全部本地数据，类似实体卡丢失，请慎重卸载。</p>
+          <p class="p-answer">4.如果不小心卸载，重装后同一个账户可重复申请电子卡，系统会为您生成一张新卡，之前的数据在后台被注销。</p>
+          <p class="p-answer">5.您的员工电子卡和设备以及账户存在绑定关系，目前尚不支持换手机转移电子卡业务，待后期逐步开放。</p>
+          <p class="p-answer">6.若您的设备已经成功申请了员工电子卡，刷卡时请提前开启NFC功能并保持手机亮屏,无需解锁。</p>
+      </ion-item>
+      <div class="ty-line15"></div>
+      <ion-item text-wrap (click)="tag5Click()">
+        <div item-left class="question">Q</div>
+      <p class="p-question">为什么我的手机刷卡时总是启动手机自带的钱包应用?</p>
+      <ion-icon name="{{tag5}}" color="gray_text" item-end></ion-icon>
+    </ion-item>
+    <div class="line"></div>
+    <ion-item text-wrap *ngIf="tag5=='ios-arrow-up'">
+        <div item-left class="answer">A</div>
+        <p class="p-answer">1.目前大多数手机为了推广自己的钱包应用，在定制操作系统时会将自带的钱包应用设为响应HCE应用的默认应用，并拥有最高优先级别来处理HCE业务数据。</p>
+        <p class="p-answer">2.例如华为、小米都是默认启动自己定制的钱包应用，需按如下操作来取消其默认最高优先级:华为手机-设置-设备连接-NFC触碰付款-默认应用，不要选择华为钱包。其他手机类似。</p>
+    </ion-item>
+    </ion-list>
+  </ion-content>

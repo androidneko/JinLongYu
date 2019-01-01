@@ -1,0 +1,9 @@
+<!-- Generated template for the IonTitleScrollComponent component -->
+<div style="width: 100%">
+  <ion-scroll scrollX="true" scrollY="false">
+  <div class="scrollContent">
+    <p class="item" *ngFor="let item of titleArray;let idx=index"  [ngClass]="{'item-selected':idx == selectedIndex}"  (click)="itemClicked(idx)"> {{item}}</p>
+  </div>
+  </ion-scroll>
+
+</div>

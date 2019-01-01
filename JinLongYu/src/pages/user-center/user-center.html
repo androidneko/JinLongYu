@@ -1,0 +1,62 @@
+<!--
+  Generated template for the UserCenterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-toolbar color="primary">
+  <button ion-button clear small navPop>
+    <ion-icon ios="ios-backwhite"></ion-icon>
+  </button>
+  <ion-title></ion-title>
+</ion-toolbar>
+<ion-content fullscreen no-margin no-padding style="position:absolute;bottom:0px;">
+  <div class="background">
+    <div text-center style="background: transparent;width:100%;overflow:auto;">
+      <!-- <ion-icon class="back" (click)="back();"></ion-icon> -->
+      <div text-center class="logoHeader">
+        <img-lazy-load default="assets/imgs/default_head_pic.png" src="{{avatar}}" (click)="gotoUserInfo();"></img-lazy-load>
+        <div style="background: white;height: 10px;width: 100%;"></div>
+        <p style="text-align:center;color:rgb(66, 66, 66);font-size:1.6rem;margin: 0;">姓名:{{info.name}}</p>
+        <p style="text-align:center;color:rgb(66, 66, 66);font-size:1.6rem;margin: 0;">工号:{{info.num}}</p>
+      </div>
+      <div style="background: white;height: 20px;width: 100%;"></div>
+    </div>
+
+    <div class="ty-line15"></div>
+    <ion-list>
+
+      <ion-item class="item_bg" (click)="gotoRecords()">
+        <img class="iconImage" src="assets/imgs/records.png" float-left>
+        <h2 float-left>刷卡记录</h2>
+        <ion-icon name="ios-rightgray" item-end></ion-icon>
+      </ion-item>
+
+      <ion-item class="item_bg" (click)="gotoSettings()">
+        <img class="iconImage" src="assets/imgs/settings.png" float-left>
+        <h2 float-left>安全设置</h2>
+        <ion-icon name="ios-rightgray" item-end></ion-icon>
+      </ion-item>
+      
+      <ion-item class="item_bg" (click)="gotoHelp()">
+        <img class="iconImage" src="assets/imgs/my_problem.png" float-left>
+        <h2 float-left>常见问题</h2>
+        <ion-icon name="ios-rightgray" item-end></ion-icon>
+      </ion-item>
+
+      <ion-item class="item_bg" (click)="gotoFeedback()">
+        <img class="iconImage" src="assets/imgs/feedback.png" float-left>
+        <h2 float-left>意见反馈</h2>
+        <ion-icon name="ios-rightgray" item-end></ion-icon>
+      </ion-item>
+
+
+      <ion-item class="item_bg" (click)="gotoAbout()">
+        <img class="iconImage" src="assets/imgs/about.png" float-left>
+        <h2 float-left>关于我们</h2>
+        <ion-icon name="ios-rightgray" item-end></ion-icon>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

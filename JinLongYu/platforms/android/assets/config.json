@@ -1,0 +1,35 @@
+{
+	"versionName":"1.1",
+	"versionCode":4,
+	"comm":{
+		"debug":true,
+		"env":"prod",
+		"keyVer":"2",
+    "mode":1,
+    "appId": "8a88a80f65b2e4b80165b2e7633b0000",
+    "appKey":"",
+		"prod":{
+			"host":"https://iot.whty.com.cn",
+			"traceUrl":"http://10.8.15.33:8888/pre/collectMsg"
+		},
+		"test":{
+			"host":"http://yfzx.whty.com.cn",
+			"traceUrl":"http://10.8.15.33:8888/pre/collectMsg"
+		},
+		"dev":{
+			"host":"http://10.8.40.143:8090",
+			"traceUrl":"http://10.8.15.33:8888/pre/collectMsg"
+		},
+    "https":{
+      "host":"http://10.8.40.231:30089",
+      "traceUrl":"http://10.8.15.33:8888/pre/collectMsg"
+    }
+	},
+	"android":{
+		"os":"01"
+	},
+	"ios":{
+		"os":"01",
+		"mode":"1"
+	}
+}

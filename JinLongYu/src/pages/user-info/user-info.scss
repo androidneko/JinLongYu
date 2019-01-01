@@ -1,0 +1,33 @@
+page-user-info {
+    .toolbar-content-ios{
+        //background: linear-gradient(to right,#00aeff,#17eae3);
+        background: #00aeff;
+        min-height: 44px;
+    }
+
+    .toolbar-ios{
+        padding: 0px !important;
+    }
+
+    //设置背景颜色
+    ion-content{
+        .fixed-content{
+            background: rgba($color: #000000, $alpha: 0) !important;
+        }
+        .scroll-content{
+            background: rgba($color: #000000, $alpha: 0) !important;
+        }
+        background: color($colors,ty-partingline) !important;
+    }
+
+    img-lazy-load{
+        img{
+            border: 2px;
+            border-color: #f1f1f1;
+            border-style: solid;
+            border-radius: 50%;
+            width:70px;
+            height:70px;
+        }
+    }
+}

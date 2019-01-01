@@ -1,0 +1,59 @@
+<!--
+  Generated template for the FeedbackPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-toolbar color="primary">
+        <button ion-button clear small navPop>
+          <ion-icon ios="ios-backwhite"></ion-icon>
+        </button>
+        <ion-title>意见反馈</ion-title>
+        <ion-buttons end>
+            <button ion-button color="white" (click)="done()" style="font-weight: normal"> 
+              确定
+            </button>
+        </ion-buttons>
+      </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content no-padding no-margin style="background:rgb(237, 237, 237)">
+
+      <div class="box">
+        <div class="inner">问题和意见<span style="color:red">*</span></div>
+      </div>
+      <div style="background:white">
+          <ion-item no-lines no-padding style="height: 130px;">
+              <ion-textarea  placeholder="请输入不小于10个字的描述" maxlength="200" minlength = "10" #desc [(ngModel)] = "textArea"></ion-textarea>
+          </ion-item>
+          <div style="width:100%;padding-right:20px;height:40px;text-align:right;color: gray">{{desc.value.toString().length}}/200</div>
+       </div>
+  
+    <div style="margin-top: 15px;padding:10px;height:30px;background:white">
+      <div style="float:left;font-size:16px">请提供相关问题的截图或照片</div>
+      <div style="float:right;color: gray;padding-right:15px;">{{imgCount}}/4</div>
+    </div>
+
+    <div style="padding:10px;height:100px;background:white">
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let item of imageArr; let i=index;" style="text-align:center" (click)="addClick(i)">
+            <img class="imgSize" [src]="item">
+            <ion-icon name="close-circle" class="delete" *ngIf="hasPhoto(i)" (click)="deleteClick(i)"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+   
+    <div style="margin-top: 15px;width:100%;height:45px;padding:1px">
+      <ion-item no-lines>
+        <ion-label style="font-size:16px;">联系方式<span style="color:red">*</span></ion-label>
+        <ion-input class="placesize" placeholder="请输入联系电话，便于我们与你联系" type="tel" maxlength="11" [(ngModel)]="phoneNumber"> </ion-input>
+      </ion-item>
+    </div>
+
+</ion-content>

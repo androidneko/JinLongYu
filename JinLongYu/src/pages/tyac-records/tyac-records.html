@@ -1,0 +1,90 @@
+<!--
+  Generated template for the TyacRecordsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar color="primary">
+    <button ion-button clear small navPop>
+      <ion-icon ios="ios-backwhite"></ion-icon>
+    </button>
+    <ion-title>刷卡记录</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="help()" > 
+          <ion-icon name="ios-help-circle-outline"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-segment mode="md" class="commSegBtn" [(ngModel)]="recCategory">
+    <ion-segment-button value="accessCtrl" (click)="segmentClick(0)">
+      打卡记录
+      <div class="bolder-sm"></div>
+    </ion-segment-button>
+    <ion-segment-button value="canteen" (click)="segmentClick(1)">
+      食堂消费记录
+      <div class="bolder-sm"></div>
+    </ion-segment-button>
+  </ion-segment>
+  <ion-datetime #picker1 style="display: none" (ngModelChange)="changeDate($event)" [displayFormat]="format" cancelText="取消" doneText="确定" [(ngModel)]="date" float-right></ion-datetime>
+</ion-header>
+
+
+<ion-content no-padding no-margin>
+  <div [ngSwitch]="recCategory">
+    <div *ngIf="recCategory=='accessCtrl'">
+        <ion-item no-lines class="titleItem">
+            <p style="color: #474747">{{[date] | dateFormat}}</p> 
+            <p>迟到:{{acInfo.lateCount}}次<span style="margin-left: 50px;">早退:{{acInfo.earlyCount}}次</span> </p>
+            <ion-icon item-end name="calendar" style="color: rgb(124, 124, 124)" (click)="showPicker()"></ion-icon>
+        </ion-item>
+      <ion-list *ngIf="acList!=null&&acList.length>0" no-margin>
+            
+            <div *ngFor="let record of acList">
+              <ion-item *ngIf="record.state != '3'">
+                <ion-icon item-start [ngClass]="{'vcardNor':record.cardType == '0'&& record.state == '0','vcardExc':record.cardType == '0'&& record.state != '0','rcardNor':record.cardType == '1' && record.state == '0','rcardExc':record.cardType == '1'&& record.state != '0'}"></ion-icon>
+                <p float-left style="min-width: 130px;color: rgb(77, 77, 77);font-size: 1.7rem;">{{record.date}}</p><p style="margin-left: 50px;color: rgb(77, 77, 77);font-size: 1.7rem;">{{record.time}}</p>
+                <p float-left style="min-width: 130px;color: rgb(194, 194, 194);font-size: 1.3rem;">{{record.week}}</p><p style="margin-left: 50px;color: rgb(194, 194, 194);font-size: 1.3rem;">{{record.zone}}</p>
+                <p item-end [ngStyle]="{'color': record.state=='0' ? '#474747' : '#f74d23'}">{{[record.state] | stateTip}}</p>
+              </ion-item>
+            </div>
+      </ion-list>
+      <div class="empty" *ngIf="!failed && (acList == null|| acList.length==0) ">
+        <img src="assets/imgs/empty.png"/>
+        <p>暂无内容</p>
+      </div>
+      <div class="fail" *ngIf="failed">
+        <img src="assets/imgs/unsupported.png"/>
+        <p>网络竟然崩溃了！别紧张，试试刷新。</p>
+        <button class="refresh" (click)="refresh();">刷新</button>
+      </div>
+    </div>
+
+    <div *ngIf="recCategory=='canteen'">
+        <ion-item no-lines class="titleItem">
+            <p style="color: #474747">{{[date] | dateFormat}}</p> 
+            <p>本月支出:￥{{ctInfo.consumeAmount}}<span style="margin-left: 50px;">午餐消费:{{ctInfo.consumeCount}}次</span> </p>
+            <ion-icon item-end name="calendar" style="color: rgb(124, 124, 124)" (click)="showPicker()"></ion-icon>
+        </ion-item>
+        <ion-list *ngIf="ctList!=null&&ctList.length>0" no-margin>
+            <ion-item *ngFor="let record of ctList">
+              <ion-icon item-start [ngClass]="{'free':record.type == '1','costs':record.type == '0'}"></ion-icon>
+              <p style="color: rgb(77, 77, 77);font-size: 1.7rem;">{{record.name}}</p>
+              <p float-left style="min-width: 100px;color: rgb(194, 194, 194);font-size: 1.3rem;">{{record.date}}</p><p style="margin-left: 30px;color: rgb(194, 194, 194);font-size: 1.3rem;">{{record.time}}</p>
+              <p item-end [ngStyle]="{'color': record.type=='1' ? '#00aeff' : '#474747'}">{{record.detail}}</p>
+            </ion-item>
+        </ion-list>
+      <div class="empty" *ngIf="!failed && (ctList == null|| ctList.length==0) ">
+        <img src="assets/imgs/empty.png"/>
+        <p>暂无内容</p>
+      </div>
+      <div class="fail" *ngIf="failed">
+        <img src="assets/imgs/unsupported.png"/>
+        <p>网络竟然崩溃了！别紧张，试试刷新。</p>
+        <button class="refresh" (click)="refresh();">刷新</button>
+      </div>
+    </div>
+    </div>
+</ion-content>

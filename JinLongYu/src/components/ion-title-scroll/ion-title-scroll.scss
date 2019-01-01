@@ -1,0 +1,21 @@
+ion-title-scroll {
+    ion-scroll{
+        width: 100%;
+        height: 44px;
+        .scrollContent{
+            display: inline;
+            white-space:nowrap; 
+        }
+        .item{
+            font-size: 16px;
+            padding: 10px 15px 10px 15px;
+            margin: 0px;
+            color: #808080;
+            display: inline-block;
+        }
+        .item-selected{
+            color:color($colors,primary);;
+            border-bottom: 2px solid color($colors,primary);
+        }
+    }
+}

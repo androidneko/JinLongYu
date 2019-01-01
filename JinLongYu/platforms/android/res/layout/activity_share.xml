@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000"
+    android:gravity="bottom"
+    android:orientation="vertical">
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:id="@+id/lin_close"
+      android:orientation="vertical"/>
+    <LinearLayout android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:background="@color/white"
+      android:paddingBottom="@dimen/share_button_container_padding_ver"
+      android:paddingTop="@dimen/share_button_container_padding_ver"
+      android:id="@+id/layout_share">
+        <LinearLayout
+          android:id="@+id/share_to_wx"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:orientation="vertical">
+          <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/share_wx" />
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/share_button_text_margin_top"
+            android:text="@string/wechat"
+            android:textColor="@color/slm_mid_grey" />
+        </LinearLayout>
+        <LinearLayout
+          android:id="@+id/share_to_wx_circle"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:orientation="vertical">
+          <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/share_wx_circle" />
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/share_button_text_margin_top"
+            android:text="@string/wechat_friend"
+            android:textColor="@color/slm_mid_grey" />
+        </LinearLayout>
+        <LinearLayout
+          android:id="@+id/share_to_qq"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:orientation="vertical">
+          <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/share_qq" />
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/share_button_text_margin_top"
+            android:text="@string/qq"
+            android:textColor="@color/slm_mid_grey" />
+        </LinearLayout>
+        <LinearLayout
+          android:id="@+id/share_to_qzone"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:orientation="vertical">
+          <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/share_qzone" />
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/share_button_text_margin_top"
+            android:text="@string/qq_zone"
+            android:textColor="@color/slm_mid_grey" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

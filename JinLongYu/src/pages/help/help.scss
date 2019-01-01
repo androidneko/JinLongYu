@@ -1,0 +1,52 @@
+page-help {
+    //设置背景颜色
+    ion-content{
+        .fixed-content{
+            background: rgba($color: #000000, $alpha: 0) !important;
+        }
+        .scroll-content{
+            background: rgba($color: #000000, $alpha: 0) !important;
+        }
+        background: color($colors,ty-partingline) !important;
+    }
+    .p-question{
+        margin-left: 10px;
+        color: #2c2c2c !important;
+    }
+    
+    .p-answer{
+        margin-left: 10px;
+        color: #979797 !important;
+    }
+    .line{
+        background: #eeeeee;
+        height: 1px;
+        width: 100%;
+    }
+    .item > ion-icon, .item-inner > ion-icon{
+        font-size: 2.0rem !important;
+        color: rgb(199, 199, 199);
+    }
+
+    .question{
+        width: 26px;
+        height: 26px;
+        background: rgb(52, 183, 235);
+        color: white;
+        text-align: center;
+        border-color: transparent;
+        border-style: solid;
+        border-radius: 50%;    
+    }
+
+    .answer{
+        width: 26px;
+        height: 26px;
+        background: rgb(218, 218, 218);
+        color: rgb(165, 165, 165);
+        text-align: center;
+        border-color: transparent;
+        border-style: solid;
+        border-radius: 50%; 
+    }
+}

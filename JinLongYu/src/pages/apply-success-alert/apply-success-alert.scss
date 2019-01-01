@@ -1,0 +1,24 @@
+page-apply-success-alert {
+    //设置背景颜色
+    ion-content{
+        background: rgba(110, 110, 110, 0.5) !important;
+    }
+
+    .dlgBg{
+        position: absolute;
+        width: 65%;
+        margin: 17%;
+        top: 100px;
+        background: #ffffff;
+        border: #ffffff;
+        border-radius: 5px;
+    }
+
+    .close{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: rgb(148, 148, 148);
+        font-size: 2rem
+    }
+}

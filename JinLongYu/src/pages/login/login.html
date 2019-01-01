@@ -1,0 +1,62 @@
+<!--
+  Generated template for the RegistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+  <ion-navbar *ngIf="showBackButton">
+
+  </ion-navbar>
+</ion-header>
+<ion-content no-padding no-margin scroll="false" class="background" style="position:absolute;bottom:0px;">
+
+  <div class="logoHeader" text-center>
+    <img src="assets/imgs/login_logo.png" alt="">
+    <p style="color: white;font-size: 2rem;padding: 0px;margin: 5px;">员工电子卡</p>
+    <div text-center style="width:100%;overflow:auto;">
+      <div  float-left col-6 (click)="selectSms()">
+        <p style="color:white;font-size: 1.7rem;">短信登录</p>
+      </div>
+      <div float-left col-6 (click)="selectPwd()">
+        <p style="color:white;font-size: 1.7rem;">密码登录</p>
+      </div>  
+    </div>
+  </div>
+
+  <div style="margin-top: -7px;text-align: center">
+    <div class="iputcenter"  [ngClass]="{true:'iputcenter',false:'iputcenter-right'}[loginType==1]">
+      <ion-item no-lines class="item-phone">
+        <ion-icon item-start></ion-icon>
+        <ion-input  type="tel" maxlength="11" placeholder="请输入手机号" [(ngModel)]="phoneNumber"></ion-input>
+      </ion-item>
+
+      <div class="ty-line1" style="width: 95%;margin:0 auto;"></div>
+
+      <ion-item no-lines class="item-code" *ngIf="loginType==1">
+        <ion-icon item-left></ion-icon>
+        <ion-input type="tel" placeholder="请输入验证码" [(ngModel)]="valcode" maxlength="6"></ion-input>
+        <button ion-button round clear item-end [disabled]="isCountingDown" [ngClass]="{true:'counting',false:'ready'}[isCountingDown]" (click)="getVerifyCodeClicked(phoneNumber)">{{valcodebtntext}}</button>
+      </ion-item>
+      
+      <ion-item no-lines class="item-password" *ngIf="loginType==0">
+        <ion-icon item-left></ion-icon>
+        <ion-input type="password" placeholder="请输入6-20位密码" [(ngModel)]="loginPassword" maxlength="20"></ion-input>
+      </ion-item>
+      <div class="ty-line1" style="width: 95%;margin:0 auto;"></div>
+      <div class="forget"><p (click)="forgetpassword()" style="margin: 0px 5px;" [ngStyle]="{'color': loginType==0 ? '#00afff' : 'transparent'}">忘记密码</p></div>
+      <div style="margin:0px 20px 0px 20px;" >
+        <button ion-button clear block class="loginBtn" (click)="loginClicked()" id="submit">
+          登录
+        </button>
+      </div>
+      <p style="text-align:center;color:gray;font-size:1.3rem">登录即表示您已阅读并同意 <span class="p1" (click)="legalCliked()">《用户使用协议》</span></p>
+    </div>
+    
+  </div>
+</ion-content>
+
+<ion-footer class="footer">
+  <p style="text-align:center;color:rgb(179, 179, 179);font-size:1.3rem">copyright © 武汉天喻聚联网络有限公司</p>
+</ion-footer>
+  

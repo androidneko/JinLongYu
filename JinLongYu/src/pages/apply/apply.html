@@ -1,0 +1,70 @@
+<!--
+  Generated template for the ApplyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar color="primary">
+    <button ion-button clear small navPop>
+      <ion-icon ios="ios-backwhite"></ion-icon>
+    </button>
+    <ion-title>申请信息</ion-title>
+  </ion-toolbar>
+
+  <div style="height: 30px;margin: auto;"><p style="color: rgb(110, 110, 110);margin-left: 10px;">为了系统完全匹配，请确认以下为员工真实信息!</p></div>
+  
+</ion-header>
+
+
+<ion-content no-padding>
+  <ion-list>
+    <ion-item no-lines style="height: 55px;">
+      <ion-label>姓名</ion-label>
+      <ion-input text-right type="text" style="color:black"  [(ngModel)]="data.personName"></ion-input>
+    </ion-item>
+    <div class="ty-line1" style="margin-left: 10px;"></div>
+  
+    <ion-item  no-lines style="height: 55px;">
+      <ion-label>性别</ion-label>
+      <ion-multi-picker [disabled]="true" item-end style="color:darkgray" placeholder="请选择" [(ngModel)]="data.gender" [multiPickerColumns]="genders" doneText="确定"
+        cancelText="取消"></ion-multi-picker>
+    </ion-item>
+    <div class="ty-line1" style="margin-left: 10px;"></div>
+
+    <ion-item no-lines style="height: 55px;">
+      <ion-label>工号</ion-label>
+      <ion-input text-right style="color:black" type="text" [(ngModel)]="data.personNo"></ion-input>
+    </ion-item>
+    <div class="ty-line1" style="margin-left: 10px;"></div>
+
+    <ion-item  no-lines style="height: 55px;">
+      <ion-label>公司</ion-label>
+      <ion-multi-picker item-end style="color:darkgray" [disabled]="true" [(ngModel)]="data.companyId" [multiPickerColumns]="companies" doneText="确定"
+        cancelText="取消"></ion-multi-picker>
+    </ion-item>
+    
+    <ion-item  no-lines style="height: 55px;">
+      <ion-label>部门</ion-label>
+      <ion-multi-picker item-end style="color:darkgray;width: 78%;text-align: right" [disabled]="true" [(ngModel)]="data.deptUuid" [multiPickerColumns]="depts" doneText="确定"
+        cancelText="取消"></ion-multi-picker>
+    </ion-item>
+    <div class="ty-line1" style="margin-left: 10px;"></div>
+    
+    <ion-item no-lines style="height: 55px;color: gray">
+      <ion-label>手机号</ion-label>
+      <ion-input text-right type="text"  [(ngModel)]="phoneNum" disabled></ion-input>
+    </ion-item>
+    <div class="ty-line1" style="margin-left: 10px;"></div>
+    <!-- <div class="ty-line1" style="margin-left: 10px;"></div> -->
+    <!-- <p style="margin: 10px 10px 0px 10px;padding: 0"><span style="color:red">*</span><span style="color:gray;font-size: 1.3rem;">如上述信息有误，请联系我们(400-027-3330)进行修改</span></p> -->
+
+  </ion-list>
+
+  <div style="margin:0px 40px 0px 40px;" >
+    <button ion-button clear block class="loginBtn" (click)="apply()" id="apply">
+      提交申请
+    </button>
+  </div>
+</ion-content>

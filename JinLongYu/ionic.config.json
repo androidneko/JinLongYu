@@ -1,0 +1,11 @@
+{
+  "name": "jepay",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [{
+    "path": "/hce-interface",
+    "proxyUrl": "https://iot.whty.com.cn/hce-interface"
+  }],
+  "type": "ionic-angular"
+}
