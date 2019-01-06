@@ -1,169 +1,83 @@
 page-login {
-    ion-input{
-        font-size:0.9em;
-    }
+    //设置背景颜色
+    ion-content{
+       .fixed-content{
+           background: rgba($color: #000000, $alpha: 0) !important;
+       }
+       .scroll-content{
+           background: rgba($color: #000000, $alpha: 0) !important;
+       }
+       background: rgb(238, 237, 237) !important;
 
-    .item-ios .item-button{
-        height: 32px !important;
-        font-size: 1.2rem !important;
-    }
+       .item-ios{
+           background-color:rgb(253, 252, 252);
+       }
+   }
 
-    .item-block{
-        min-height: 5rem !important;
-    }
+   .background{
+       width: 100%;
+       height: 100% !important;
+       background-position:top;
+       background-image: url(../assets/imgs/login_bg.jpg);
+       background-repeat: no-repeat;
+       background-size:100% 280px; 
+       z-index: 1;
+   }
 
-    .footer
-    {
-        width: 100%;
-        height: 8% !important;
-        //background: url(../assets/imgs/regist_foot.png) center;
-        background-repeat: no-repeat;
-        z-index: 1;
+   .logoHeader{
+       margin-top: 90px;
+       margin-bottom: 60px;
+       width: 100px;
+       height: 100px;
+   }
 
-    }
-    .item-phone{
-        background-color:transparent !important;
-        width: 90%;
-        margin-left: 10px;
-        .item-icon
-        {
-            background: url(../assets/imgs/regist_username.png) no-repeat center !important;
-            background-size:70% 70% !important; 
-        }
-    }
-    .item-password{
-        background-color:transparent !important;
-        width: 90%;
-        margin-left: 10px;
-        .item-icon
-        {
-            background: url(../assets/imgs/regist_password.png) no-repeat center !important;
-            background-size:80% 70% !important;
-        }
-    }
-    .item-code{
-        background-color:transparent !important;
-        width: 90%;
-        margin-left: 10px;
-        .item-icon
-        {
-            background: url(../assets/imgs/regist_code.png) no-repeat center !important;
-            background-size:80% 70% !important; 
-        }
-    }
+   .iputcenter{
+       width: 90%;
+       margin:0 auto;
+   }
+   .passwordopreation{
+       margin-left: 10px;
+       ion-checkbox{
+           padding-top:1px;
+       }
+       p{
+           font-size: 10px;
+           padding-left: 2px;
+           color: color($colors,primary);
+       }
+   }
+   .bottom{
+       position: absolute;
+       bottom: 20px;
+       color: color($colors,primary);
+   }
 
-    .background{
-        width: 100%;
-        height: 100% !important;
-        background-position:top;
-        background-image: url(../assets/imgs/login_bg.png);
-        background-repeat: no-repeat;
-        background-size:100% 280px; 
-        z-index: 1;
-    }
+   .logo {
+       padding: 20px 0;
+       min-height: 130px;
+       text-align: center;
+     }
 
-    .logoHeader{
-        margin-top: 30px;
-        img{
-            width: 115px;
-            height: 115px;
-        }
-    }
-    .iputcenter{
-        padding: 30px 0px 0px 0px;
-        width: 90%;
-        height: 280px;;
-        background-image: url(../assets/imgs/sms_login_bg.png);
-        background-repeat: no-repeat;
-        background-size:100% 280px;
-        margin:0 auto;
-    }
+   .fastEntry{
+       flex: 0 0 48%;
+       .regist{
+           color: color($colors,primary);
+           text-align: right;
+           margin-top: 15px;
+           font-size: 1.3rem;
+       }
+       .forget{
+           color: color($colors,primary);
+           text-align: left;
+           margin-top: 15px;
+           font-size: 1.3rem;
+       }
+   }
 
-    .iputcenter-right{
-        padding: 30px 0px 0px 0px;
-        width: 90%;
-        height: 280px;;
-        background-image: url(../assets/imgs/pwd_login_bg.png);
-        background-repeat: no-repeat;
-        background-size:100% 280px;
-        margin:0 auto;
-    }
-
-    .segment-button{
-        color: color($colors,ty-gray) !important;
-        padding: 0px !important;
-        .bolder-sm{
-            border: 5px solid color($colors, ty-gray);
-            margin: 0 auto;
-        }
-    }
-    .segment-button.segment-activated{
-        color: color($colors,primary) !important;
-        font-weight: bold;
-        .bolder-sm{
-            border: 5px solid color($colors, primary);
-            margin: 0 auto;
-        }
-    }
-    .p1{
-        color: color($colors,primary) !important;
-        font-size: 1.3rem;
-        vertical-align: middle;
-    }
-    .sg{
-        padding: 0 20%;
-        align-content: center;
-    }
-    .forget{
-        width:90%;
-        margin-left: 20px;
-        line-height: 40px;
-        text-align: right;
-        vertical-align: middle;
-        color: color($colors,primary);
-    }
-
-    .counting{
-        width: 90px;
-        height: 26px;
-        color: color($colors,ty-gray);
-        border-color: color($colors,ty-gray);
-        border: 1.5px solid;
-    }
-    .ready{
-        width: 90px;
-        height: 26px;
-        box-sizing: border-box;
-        border: 1px solid transparent;
-        background-clip: padding-box,border-box;
-        background-origin: padding-box,border-box;
-        background-image: linear-gradient(#fff,#fff),linear-gradient(to right,#0ebafb,#51e8ed);
-        border-radius: 20px;
-    }
-
-    .loginBtn{
-        background: linear-gradient(to right,#0ebafb,#51e8ed);
-        color: white;
-    }
-
-    .head{
-        margin-top:50px;
-    }
-    img-lazy-load{
-        img{
-            width: 80px;
-            height: 80px !important;
-            border-radius: 50%;
-        }
-    }
-    .password{
-        width:100%;
-        text-align: right;
-        color: color($colors,ty-blue);
-    }
-    .sms-login{
-        width:50%;
-        text-align: left;
-        color: color($colors,ty-blue);
-    }
+   .parent_gravity_center{
+       margin: 20px;
+       display:flex; 
+       justify-content:center; 
+       align-items:center; 
+   }
 }
