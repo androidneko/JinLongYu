@@ -37,7 +37,7 @@ import { DeviceIntefaceServiceProvider } from './../providers/device-inteface-se
 export class MyApp {
   // rootPage:any = TabsPage;
   @ViewChild(Nav) nav: Nav;
-  rootPages: Array<string> = ["LoginPage", "RootPage"];
+  rootPages: Array<string> = ["LoginPage", "HomePage"];
   backButtonPressed: boolean = false;
   rootPage: string = "";
   constructor(
@@ -80,9 +80,7 @@ export class MyApp {
         cssClass: 'text-align: center'
       }).present();
       AppServiceProvider.getInstance().userinfo.token = "";
-      AppServiceProvider.getInstance().userinfo.realName = "";
-      AppServiceProvider.getInstance().userinfo.companyNo = "";
-      AppServiceProvider.getInstance().userinfo.pasFlag = "";
+      AppServiceProvider.getInstance().userinfo.loginName = "";
       AppServiceProvider.getInstance().userinfo.avatar = "";
       //用户信息整体保存，整体更新，整体读取
       //用户信息更新保存场景:登录、申请成功，修改用户头像（首页和我的用户信息页面）
@@ -100,13 +98,12 @@ export class MyApp {
   }
   //初始化配置信以后服务器地址可能重同一个配置文件和特殊化设置
   configSettingData() {
-    return this.checkIfDeviceSupportHce()
-      .then(() => { return this.getConfig() })
-      .then(() => { return this.getCommInfo() })
+    return this.getConfig()
+      //.then(() => { return this.getCommInfo() })
       .then(() => { return this.getUsername() })
       .then((username) => { return this.getUserInfo(username) })
       .then(() => {
-        this.launchPage("RootPage");
+        this.launchPage("HomePage");
       }, err => {
         this.launchPage("LoginPage");
         //this.launchPage("RootPage");
@@ -115,28 +112,6 @@ export class MyApp {
 
   checkUpdate(){
     this.device.push("checkUpdate", "false" ,msg =>{},err => {},false);
-  }
-
-  checkIfDeviceSupportHce() {
-    return new Promise((resolve, reject) => {
-      if (this.platform.is("android")) {
-        this.device.push("checkIfDeviceSupportHce", "", msg => {
-          AppGlobal.commInfo.hasHce = msg.hasHce;
-          AppGlobal.commInfo.isRooted = msg.isRooted;
-          if(msg.hasHce && !msg.isRooted){
-            resolve();
-          }else {
-            return this.launchPage("UnsupportedPage");
-          }
-        }, err => {
-          //resolve();
-          return this.launchPage("UnsupportedPage");
-        });
-      } else {
-        console.log("platform.is-->web");
-        resolve();
-      }
-    });
   }
 
   getConfig() {
@@ -167,7 +142,7 @@ export class MyApp {
 
   getCommInfo() {
     //检查更新
-    this.checkUpdate();
+    //this.checkUpdate();
     
     return new Promise((resolve, reject) => {
       this.device.push("commInfo", "", msg => {
@@ -211,7 +186,7 @@ export class MyApp {
     return new Promise((resolve, reject) => {
       this.db.getString("username", (msg) => {
         console.log("username-->" + msg);
-        AppServiceProvider.getInstance().userinfo.username = msg;
+        AppServiceProvider.getInstance().userinfo.loginName = msg;
         resolve(msg);
       },
         (err) => {

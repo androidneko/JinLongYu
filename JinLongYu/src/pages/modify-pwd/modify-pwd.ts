@@ -1,5 +1,4 @@
 import { BasePage } from './../base/base';
-import { DbServiceProvider } from './../../providers/db-service/db-service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ToastController, Events } from 'ionic-angular';
 import { TyNetworkServiceProvider } from '../../providers/ty-network-service/ty-network-service';
@@ -35,7 +34,7 @@ export class ModifyPwdPage extends BasePage {
     public navParams: NavParams,
     private net:TyNetworkServiceProvider,
     ) {
-    super(navCtrl,navParams,device,toastCtrl);
+    super(navCtrl,navParams,toastCtrl);
   }
 
   ionViewDidLoad() {

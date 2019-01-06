@@ -31,10 +31,11 @@ import android.util.Log;
 import com.androidcat.utilities.LogUtil;
 
 import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaActivity;
 import org.apache.cordova.CordovaPreferences;
 import org.json.JSONObject;
 
-public class MainActivity extends CheckPermissionActivity {
+public class MainActivity extends CordovaActivity {
   private static final String TAG = "MainActivity";
   private CallbackContext mCallback = null;
 
@@ -52,9 +53,6 @@ public class MainActivity extends CheckPermissionActivity {
     registerEventReceiver();
     //load url交给父类check update
     loadUrl(launchUrl);
-    /*if(!HceUtils.isSupportHCE(this)){
-      //showToast("该手机不支持hce功能，无法正常使用本App");
-    }*/
   }
 
   public CordovaPreferences getCordovaPreferences() {

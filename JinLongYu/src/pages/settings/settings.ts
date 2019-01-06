@@ -29,7 +29,7 @@ export class SettingsPage extends BasePage{
     public device:DeviceIntefaceServiceProvider,
     public db: DbServiceProvider,
     public navParams: NavParams) {
-    super(navCtrl, navParams,device,toastCtrl);
+    super(navCtrl, navParams,toastCtrl);
   }
 
   ionViewWillEnter(){

@@ -1,7 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { DeviceIntefaceServiceProvider } from '../../providers/device-inteface-service/device-inteface-service';
-import { PhotoLibrary } from '@ionic-native/photo-library';
 import { BasePage } from '../base/base';
 
 @IonicPage()
@@ -12,8 +11,8 @@ import { BasePage } from '../base/base';
 export class AboutPage extends BasePage{
   @ViewChild('testImg') testImg:ElementRef;
   version:String = '1.0.0.0';
-  constructor(public navCtrl: NavController, public device:DeviceIntefaceServiceProvider,private photoLibrary:PhotoLibrary, public navParams: NavParams,public toastCtrl?: ToastController) {
-    super(navCtrl,navParams,device,toastCtrl);
+  constructor(public navCtrl: NavController, public device:DeviceIntefaceServiceProvider,public navParams: NavParams,public toastCtrl?: ToastController) {
+    super(navCtrl,navParams,toastCtrl);
   }
 
   ionViewDidLoad(){
