@@ -105,6 +105,4 @@
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
     <plugin name="ty-plugin-native" spec="file:../typlugins/TYNative" />
     <plugin name="cordova-plugin-compat" spec="^1.2.0" />
-    <engine name="ios" spec="~4.5.2" />
-    <engine name="android" spec="^6.3.0" />
 </widget>

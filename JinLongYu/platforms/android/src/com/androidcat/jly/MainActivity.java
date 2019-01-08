@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.androidcat.jly.ui;
+package com.androidcat.jly;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -28,6 +28,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.androidcat.jly.ui.CheckPermissionActivity;
 import com.androidcat.utilities.LogUtil;
 
 import org.apache.cordova.CallbackContext;
@@ -35,7 +36,7 @@ import org.apache.cordova.CordovaActivity;
 import org.apache.cordova.CordovaPreferences;
 import org.json.JSONObject;
 
-public class MainActivity extends CordovaActivity {
+public class MainActivity extends CheckPermissionActivity {
   private static final String TAG = "MainActivity";
   private CallbackContext mCallback = null;
 

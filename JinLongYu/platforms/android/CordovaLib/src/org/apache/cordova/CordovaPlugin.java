@@ -41,7 +41,7 @@ import java.io.IOException;
 public class CordovaPlugin {
     public CordovaWebView webView;
     public CordovaInterface cordova;
-    protected CordovaPreferences preferences;
+    public CordovaPreferences preferences;
     private String serviceName;
 
     /**

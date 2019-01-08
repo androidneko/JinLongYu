@@ -257,8 +257,6 @@ dependencies {
   implementation project(':utilities')
   // SUB-PROJECT DEPENDENCIES END
   implementation files('libs/catUtils-1.2.jar')
-  implementation files('libs/jpush-android-3.1.6.jar')
-  implementation files('libs/jcore-android-1.2.5.jar')
   implementation files('libs/Zxing-core-3.2.0.jar')
   implementation files('libs/gson-2.2.2.jar')
   //implementation files('libs/umeng-common-1.5.0.jar')

@@ -19,7 +19,7 @@
     <uses-permission android:name="android.hardware.camera.autofocus" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <application android:hardwareAccelerated="true" android:icon="@mipmap/icon" android:label="@string/app_name" android:manageSpaceActivity="com.androidcat.jly.ui.DataManagerActivity" android:name="com.androidcat.jly.application.JlHceApp" android:supportsRtl="true">
-        <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale" android:label="@string/activity_name" android:launchMode="singleTop" android:name=".ui.MainActivity" android:screenOrientation="portrait" android:theme="@android:style/android:Theme.Translucent.NoTitleBar.Fullscreen" android:windowSoftInputMode="adjustPan">
+        <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale" android:label="@string/activity_name" android:launchMode="singleTop" android:name=".MainActivity" android:screenOrientation="portrait" android:theme="@android:style/android:Theme.Translucent.NoTitleBar.Fullscreen" android:windowSoftInputMode="adjustPan">
             <intent-filter android:label="@string/launcher_name">
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
