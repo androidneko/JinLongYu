@@ -220,7 +220,6 @@ public class CordovaActivity extends Activity {
      * Load the url into the webview.
      */
     public void loadUrl(String url) {
-        android.util.Log.d(TAG, "loadUrl url = " + url);
         if (appView == null) {
             init();
         }

@@ -83,40 +83,40 @@
   },
   "installed_plugins": {
     "cordova-plugin-add-swift-support": {
-      "PACKAGE_NAME": "com.whty.jepay"
+      "PACKAGE_NAME": "com.androidcat.jly"
     },
     "cordova-plugin-camera": {
-      "PACKAGE_NAME": "com.whty.jepay"
+      "PACKAGE_NAME": "com.androidcat.jly"
     },
     "cordova-plugin-cocoapod-support": {
-      "PACKAGE_NAME": "com.whty.jepay"
+      "PACKAGE_NAME": "com.androidcat.jly"
     },
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "com.whty.jepay"
+      "PACKAGE_NAME": "com.androidcat.jly"
     },
     "cordova-plugin-file": {
-      "PACKAGE_NAME": "com.whty.jepay"
+      "PACKAGE_NAME": "com.androidcat.jly"
     },
     "cordova-plugin-ionic-webview": {
-      "PACKAGE_NAME": "com.whty.jepay"
+      "PACKAGE_NAME": "com.androidcat.jly"
     },
     "cordova-plugin-photo-library": {
-      "PACKAGE_NAME": "com.whty.jepay"
+      "PACKAGE_NAME": "com.androidcat.jly"
     },
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.whty.jepay"
+      "PACKAGE_NAME": "com.androidcat.jly"
     },
     "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "com.whty.jepay"
+      "PACKAGE_NAME": "com.androidcat.jly"
     },
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.whty.jepay"
+      "PACKAGE_NAME": "com.androidcat.jly"
     },
     "ionic-plugin-keyboard": {
-      "PACKAGE_NAME": "com.whty.jepay"
+      "PACKAGE_NAME": "com.androidcat.jly"
     },
     "ty-plugin-native": {
-      "PACKAGE_NAME": "com.whty.jepay"
+      "PACKAGE_NAME": "com.androidcat.jly"
     }
   },
   "dependent_plugins": {},
@@ -391,10 +391,10 @@
     "cordova-plugin-camera": "3.0.0",
     "cordova-plugin-cocoapod-support": "1.3.0",
     "cordova-plugin-device": "1.1.4",
-    "cordova-plugin-file": "4.3.2",
+    "cordova-plugin-file": "5.0.0",
     "cordova-plugin-ionic-webview": "1.1.16",
-    "cordova-plugin-photo-library": "2.1.0",
-    "cordova-plugin-splashscreen": "4.0.3",
+    "cordova-plugin-photo-library": "2.1.1",
+    "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-statusbar": "2.2.4-dev",
     "cordova-plugin-whitelist": "1.3.1",
     "ionic-plugin-keyboard": "2.2.1",

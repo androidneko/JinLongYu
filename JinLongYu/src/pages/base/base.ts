@@ -1,6 +1,5 @@
 import { NavController, NavParams, ToastController, NavOptions } from 'ionic-angular';
 import { Page, TransitionDoneFn } from 'ionic-angular/navigation/nav-util';
-import { DeviceIntefaceServiceProvider } from '../../providers/device-inteface-service/device-inteface-service';
 
 /**
  * Generated class for the BasePage page.
@@ -14,7 +13,6 @@ export class BasePage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public device:DeviceIntefaceServiceProvider,
     public toastCtrl?: ToastController
     ) {
     

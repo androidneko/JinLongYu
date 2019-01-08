@@ -1,0 +1,6 @@
+<ion-tabs #tabs (ionChange)="onTabChanged()">
+    <ion-tab [root]="storeInfoRoot" tabsHideOnSubPages="true" tabTitle="仓库信息" tabIcon="home"></ion-tab>
+    <ion-tab [root]="regularMaintainRoot" tabsHideOnSubPages="true" tabTitle="常规保养" tabIcon="stopwatch"></ion-tab>
+    <ion-tab [root]="dailyMaintainRoot" tabsHideOnSubPages="true" tabTitle="日常维护" tabIcon="umbrella"></ion-tab>
+    <ion-tab [root]="userInfoRoot" tabsHideOnSubPages="true" tabTitle="个人信息" tabIcon="contact"></ion-tab>
+</ion-tabs>

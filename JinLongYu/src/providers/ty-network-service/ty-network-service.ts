@@ -67,35 +67,12 @@ export class TyNetworkServiceProvider {
     };
     let loading = this.loadingCtrl.create(loadingConfig);
     console.log("post:"+url+params);
-    params["deviceId"] = AppGlobal.commInfo.deviceId;
-    params["msgId"] = new Date().getTime()+"";
-
-    // let sortParams = {};
-    // let sortKeys = Object.keys(params).sort();
-    // for (let index = 0; index < sortKeys.length; index++) {
-    //   const key = sortKeys[index];
-    //   sortParams[key] = params[key];
-    // }
-    //把签名放在底座去做，避免和服务端签名不一致
-    //let sign = this.sign(sortParams);
-    //sortParams['sign'] = sign;
 
     if (loader) {
         loading.present();
     }
 
     let finalUrl = AppGlobal.domain+url;
-    //add some process for demo
-    if(AppGlobal.Config.comm.mode == 0){
-      if (url == AppGlobal.API.applyNxp){
-        finalUrl = AppGlobal.Config.comm['prod'].host + AppGlobal.interfacePrefix + url;
-      }
-      if (url == AppGlobal.API.falseLogin){
-        url = AppGlobal.API.login;
-        finalUrl = AppGlobal.Config.comm['prod'].host + AppGlobal.interfacePrefix + url;
-      }
-    }
-    //for demo end
 
     let mParams = {
       "postData":JSON.stringify(params),
@@ -108,15 +85,15 @@ export class TyNetworkServiceProvider {
           loading.dismiss();
         }
         let info = JSON.parse(resp);
-        if (info.returnCode == AppGlobal.returnCode.succeed) {
+        if (info.code == AppGlobal.returnCode.succeed) {
           success(info);
         } else {
-          if ('INVALIDTOKEN' == info.returnCode) {
+          if (-1 == info.code) {
             this.events.publish("INVALIDTOKEN");
             //failed(info.returnDes);
           }
           else {
-            failed(info.returnDes);
+            failed(info.message);
           }
         }
       });

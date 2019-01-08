@@ -128,7 +128,7 @@ export class AppGlobal {
       uploadDoc:':8080/pc/data/uploadDoc',//文件上传
     }
     static returnCode:any ={
-        succeed:'SUCCESS'//成功
+        succeed:1//成功
     }
 
 }
@@ -139,13 +139,13 @@ export class AppServiceProvider {
   //当前用户信息
   public userinfo:any = {
     avatar:"",
-    realName:"",
-    gender:"",
+    userName:"",
+    sex:"",
     companyNo:"",
-    username:"",
+    loginName:"",
     company:"",
     deptUuid:"",
-    companyId:"",
+    phonenumber:"",
     token:"",
     pasFlag:""
   };

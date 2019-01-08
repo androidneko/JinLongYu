@@ -38,7 +38,7 @@ export class ForgetPasswordPage extends BasePage {
     public navParams: NavParams, 
     public db: DbServiceProvider, 
     private net: TyNetworkServiceProvider) {
-    super(navCtrl, navParams, device,toastCtrl);
+    super(navCtrl, navParams,toastCtrl);
     // this.db.getString("username",ret=>{
     //   this.phone = ret;
     // });

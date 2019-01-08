@@ -58,51 +58,15 @@ public class TyPluginManager {
       JSONObject jsonObject = new JSONObject(message);
       String params = jsonObject.optString("postData");
       final String url = jsonObject.optString("url");
-      String userName = JepayDatabase.getInstance(context).getCacheData("username");
 
       //设置http请求header等参数，并开始请求服务端
       Map<String, String> headers = new HashMap<String, String>();
       headers.put("Content-Type", "application/json");
       headers.put("Connection", "close");
-      headers.put("APPID",GConfig.getConfig().comm.appId);
-      LogU.e("APPID","APP_ID:"+GConfig.getConfig().comm.appId);
-      /*if (!GConfig.getConfig().comm.debug){
-        if(!url.endsWith("file/upload/string")){
-          headers.put("ENCODEMETHOD","base64");
-        }
-      }*/
-      //强制加密，除了个别接口以外
-      if(!url.endsWith("file/upload/string")){
-        headers.put("ENCODEMETHOD","base64");
-      }
-
-      //
-      if(!url.endsWith("file/upload/string")){
-        headers.put("SIGNMETHOD","ecb");
-      }
-      //headers.put("SIGN_METHOD","md5");
-      String token = TyPluginCoreWorker.getToken(url,userName,context);
-      if (!Utils.isNull(token)){
-        headers.put("Authorization",token);
-      }
 
       JSONObject paramJson = new JSONObject(params);
-      LogU.e("appKey","appKey:"+GConfig.getConfig().comm.appKey);
-      String sign = JlEncodingUtil.getSort(JlEncodingUtil.sort(paramJson),GConfig.getConfig().comm.appKey);
-      LogU.e("sign","sign:"+sign);
-      paramJson.put("sign",sign);
-
       String finalParams = paramJson.toString();
       LogU.e("params","params:"+finalParams);
-      //启用加解密策略，过滤图片上传接口
-      /*if (!GConfig.getConfig().comm.debug){
-        if(!url.endsWith("file/upload/string")){
-          finalParams = JlEncodingUtil.encodeRequest(finalParams);
-        }
-      }*/
-      if(!url.endsWith("file/upload/string")){
-        finalParams = JlEncodingUtil.encodeRequest(finalParams);
-      }
       BaseManager baseManager = new BaseManager(context);
       baseManager.post(url, finalParams,headers, new RawResponseHandler() {
         @Override
@@ -111,24 +75,7 @@ public class TyPluginManager {
             callbackContext.error("服务端返回信息为空");
             return;
           }
-
           String finalResponse = response;
-          /*if (!GConfig.getConfig().comm.debug){
-            if (response.contains("\"")){
-              LogU.e("post","response contains \"-->"+response);
-              response = response.replaceAll("\"","");
-            }
-            if(!url.endsWith("file/upload/string")){
-              finalResponse = JlEncodingUtil.decodeResponse(response);
-            }
-          }*/
-          if (response.contains("\"")){
-            LogU.e("post","response contains \"-->"+response);
-            response = response.replaceAll("\"","");
-          }
-          if(!url.endsWith("file/upload/string")){
-            finalResponse = JlEncodingUtil.decodeResponse(response);
-          }
           if (com.androidcat.utilities.Utils.isNull(finalResponse) || !GsonUtil.isJson(finalResponse)){
             callbackContext.error("解析信息出错");
             return;
