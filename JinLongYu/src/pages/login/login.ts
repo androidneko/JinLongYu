@@ -78,9 +78,10 @@ export class LoginPage extends BasePage {
     return true;
   }
 
-  loginClicked() {
+  tryLogin() {
     //账号登录
     if (this.checkInfoValid()) {
+      this.setRoot("LoginPage","HomePage");
         return this.login()
       .then(()=>{
         //用户信息整体保存，整体更新，整体读取
@@ -88,7 +89,7 @@ export class LoginPage extends BasePage {
         this.db.saveString(JSON.stringify(AppServiceProvider.getInstance().userinfo),
           AppServiceProvider.getInstance().userinfo.username+"_userinfo");
         //最终跳转页面
-        this.setRoot("LoginPage","RootPage");
+        this.setRoot("LoginPage","HomePage");
       });  
     }
   }

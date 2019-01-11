@@ -1,3 +1,103 @@
 page-user-info {
+    .toolbar-content-ios{
+        //background: linear-gradient(to right,#00aeff,#17eae3);
+        min-height: 44px;
+    }
 
+    .toolbar-ios-primary .toolbar-background-ios{
+        background:transparent;
+    }
+
+    .toolbar-ios{
+        padding: 0px !important;
+    }
+
+    //设置背景颜色
+    ion-content{
+        .fixed-content{
+            background: rgba($color: #000000, $alpha: 0) !important;
+        }
+        .scroll-content{
+            background: rgba($color: #000000, $alpha: 0) !important;
+        }
+        background: #ffffff !important;
+    }
+
+    .background{
+        width: 100%;
+        background-image: url(../assets/imgs/user_center_bg.jpg);
+        background-repeat: no-repeat;
+        background-size:100% 260px; 
+        z-index: 10;
+    }
+
+    .back{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        left: 5px;
+        top:5px;
+        background: url(../assets/imgs/back-icon.png) no-repeat center !important;
+        background-size: 10px 20px !important;
+    }
+
+    .logoHeader{
+        margin-top: 45%;
+        z-index: 1;
+    }
+
+    img-lazy-load{
+        img{
+            border-radius: 50%;
+            width:130px;
+            height:130px;
+        }
+    }
+
+    ion-list-header .label-ios{
+        margin: 0px;
+    }
+    .list-ios > .item-block:first-child{
+        border-top: 0px;
+    }
+
+    .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{
+        border-bottom:0.5px solid #f0f0f0;
+    }
+
+    ion-item .label-ios{
+        margin: 0px;
+    }
+    .item .item-inner{
+        padding-right: 0px !important;
+    }
+    .item > ion-icon, .item-inner > ion-icon{
+        min-height:1.3rem !important;
+    }
+    .item_bg{
+        padding-top: 5px;
+    }
+    .item_bg:active{
+        background: #eee;
+    }
+    .iconImage{
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+    }
+    .item-ios h2{
+        color: #303030;
+        margin-top: 3px;
+    }
+
+    .line{
+        width: 100%;
+        height: 1px;
+        background: #ececec;
+        margin-left: 20px;
+    }
+
+    .item-block{
+        min-height: 5rem !important;
+    }
 }

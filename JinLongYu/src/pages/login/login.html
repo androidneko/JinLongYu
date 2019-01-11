@@ -7,36 +7,31 @@
 <ion-header no-border>
 
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
       <ion-title>登录</ion-title>
     </ion-navbar>
 
 </ion-header>
-<ion-content no-padding scroll="false" style="position:absolute;bottom:0px;"></ion-content>
-<ion-footer class="background">
-<div class="logoHeader" text-center>
-
-</div>
-
-<div class="iputcenter">
-  <ion-item no-lines >
-    <!--<ion-label fixed>账号</ion-label>-->
-    <ion-icon name="contact" color="primary" item-left ios="ios-contact-outline" md="ios-contact-outline"></ion-icon>
-    <ion-input clearInput=true type="text" (keydown)="keydown($event)" placeholder="请输入账号" [(ngModel)]="username"></ion-input>
-  </ion-item>
+<ion-content scroll="false">
+  <div class="logo">
+		<img src="../../assets/imgs/login_logo.png">
+  </div>
   
-  <ion-item no-lines style="margin-top:1px;">
-    <ion-icon name="lock" color="primary" item-left ios="ios-lock-outline" md="ios-lock-outline"></ion-icon>
-    <ion-input clearInput=true style="width:70%" type="password" (keydown)="keydown($event)" placeholder="请输入密码" [(ngModel)]="password"></ion-input>
-  </ion-item>
-</div>
+  <ion-list>
+    <ion-item >
+      <!--<ion-label fixed>账号</ion-label>-->
+      <ion-icon name="contact" color="primary" item-left ios="ios-contact-outline" md="ios-contact-outline"></ion-icon>
+      <ion-input clearInput=true type="text" (keydown)="keydown($event)" placeholder="请输入账号" [(ngModel)]="loginName"></ion-input>
+    </ion-item>
+    
+    <ion-item style="margin-top:1px;">
+      <ion-icon name="lock" color="primary" item-left ios="ios-lock-outline" md="ios-lock-outline"></ion-icon>
+      <ion-input clearInput=true style="width:70%" type="password" (keydown)="keydown($event)" placeholder="请输入密码" [(ngModel)]="loginPassword"></ion-input>
+    </ion-item>
+  </ion-list>
 
-<div style="margin-top:30px;margin-left:20px;margin-right:20px">
-  <button ion-button block color="primary" (click)="tryLogin(username, password)">
-    登录
-  </button>
-</div>
-
-</ion-footer>
+  <ion-row style="margin: 10px;">
+    <ion-col>
+      <button ion-button (click)="tryLogin(loginName, loginPassword)" type="submit" block>登录</button>
+    </ion-col>
+  </ion-row>
+</ion-content>
