@@ -2,6 +2,7 @@ import { ComponentsModule } from './../components/components.module';
 
 import { NgModule, ErrorHandler, NgZone, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MultiPickerModule } from 'ion-multi-picker';
 import { IonicApp, IonicModule, IonicErrorHandler, Platform, LoadingController, Events } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Http, HttpModule } from '@angular/http';
@@ -50,6 +51,7 @@ export function dbFactory(platform:Platform,zone:NgZone) {
       mode: 'ios',//样式强制使用ios样式
       // preloadModules: true
     }),
+    MultiPickerModule,
     ComponentsModule,
   ],
   bootstrap: [IonicApp],

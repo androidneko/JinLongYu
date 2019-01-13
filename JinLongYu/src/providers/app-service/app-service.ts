@@ -29,15 +29,15 @@ export class AppGlobal {
           appKey:"",
           mode:0,
           prod: {
-            host: "https://iot.whty.com.cn",
+            host: "http://220.249.102.138:8018",
             traceUrl: "http://10.8.15.33:8888/pre/collectMsg"
           },
           test: {
-            host: "http://yfzx.whty.com.cn",
+            host: "http://220.249.102.138:8018",
             traceUrl: "http://10.8.15.33:8888/pre/collectMsg"
           },
           dev: {
-            host: "http://yfzx.whty.com.cn:3008",
+            host: "http://220.249.102.138:8018",
             traceUrl: "http://10.8.15.33:8888/pre/collectMsg"
           },
           https:{
@@ -70,31 +70,31 @@ export class AppGlobal {
     }
 
     static host = "";
-    static interfacePrefix = "/hce-interface";
-    static picturePrefix = AppGlobal.host + "/dev-hce/";
+    static interfacePrefix = "/app";
+    static picturePrefix = AppGlobal.host + "/profile/";
     static domain = AppGlobal.host + AppGlobal.interfacePrefix; //测试环境
     // static domain = "http://10.8.3.51:9090"; //
 
     static API = {
         test:"",
-        login:'/login',//登录
-        smsCode:'/message/sendSms',//短信验证码
-        setPwd: '/users/pwd/set', //注册
-        resetPassword: '/users/pwd/reset', //忘记密码
+        login:'/userLogin',//登录
+        getWarehouseByCode:'/getWarehouseByCode',//短信验证码
+        getDict: '/getDict', //注册
+        getMechanicalVentilationByCodeOpen: '/getMechanicalVentilationByCodeOpen', //忘记密码
         modifyPassword: '/api/v1/account/modifyPwd', //修改密码
-        feedback: '/api/appManage/saveFeedback', //编辑用户信息
+        saveOpenMechanicalVentilationByCode: '/saveOpenMechanicalVentilationByCode', //编辑用户信息
         modifyPwd: '/users/pwd/modify', //获取用户信息
         userInfo: '/users/info', //获取任务列表列表
-        base64PicUpload:'/file/upload/string',
-        modifyUserInfo:'/users/info/modify',
-        logout:"/users/logout",
-        apply: '/card/app/active', 
-        applyNxp: '/card/app/m2goAppActive', 
-        acList:'/record/doorPage',
-        ctList:'/record/roomPage',
-        companyAndDept:'/users/queryCompanyDept',
-        checkUpdate:'/api/appManage/queryVersion',
-        bindJpush:'/message/bindJpush',
+        saveCloseMechanicalVentilationByCode:'/saveCloseMechanicalVentilationByCode',
+        getMechanicalVentilationByCode:'/getMechanicalVentilationByCode',
+        saveShowMechanicalVentilationById:"/saveShowMechanicalVentilationById",
+        getMechanicalVentilationTimeList: '/getMechanicalVentilationTimeList', 
+        getGrainCoolingByCodeOpen: '/getGrainCoolingByCodeOpen', 
+        saveOpenGrainCoolingByCode:'/saveOpenGrainCoolingByCode',
+        saveCloseGrainCoolingByCode:'/saveCloseGrainCoolingByCode',
+        getGrainCoolingByCode:'/getGrainCoolingByCode',
+        getGrainCoolingTimeList:'/getGrainCoolingTimeList',
+        saveGrainCoolingById:'/saveGrainCoolingById',
         applyConfirm:'/card/app/ackTransitBundle',
         falseLogin:'/api/falseLogin',
         prepSpleAcc:'/api/AcceptSample/Post',
@@ -130,6 +130,12 @@ export class AppGlobal {
     static returnCode:any ={
         succeed:1//成功
     }
+
+    static dict:any = {
+
+    }
+
+    static wareHouse:any;
 
 }
 

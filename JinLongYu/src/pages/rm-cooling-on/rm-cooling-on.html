@@ -1,0 +1,64 @@
+<!--
+  Generated template for the RmCoolingOnPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>开机</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+  <ion-list no-margin no-padding>
+    <ion-item >
+      <ion-label>仓号</ion-label>
+      <ion-note item-end>{{param.warehouseCode}}</ion-note>
+    </ion-item>
+
+    <ion-item >
+        <ion-label>开机时间</ion-label>
+        <ion-note item-end>{{param.startTime}}</ion-note>
+    </ion-item>
+
+    <ion-item detail-push >
+        <ion-label>谷冷机功率</ion-label>
+        <ion-multi-picker  item-end [(ngModel)]="param.powerGrainCooler" [multiPickerColumns]="coolerPowers" placeholder="请选择" doneText="确定" cancelText="取消"></ion-multi-picker>
+    </ion-item>
+
+    <ion-item detail-push >
+        <ion-label>降温目的</ion-label>
+        <ion-multi-picker  item-end [(ngModel)]="param.coolingPurpose" [multiPickerColumns]="purposes" placeholder="请选择" doneText="确定" cancelText="取消"></ion-multi-picker>
+    </ion-item>
+
+    <ion-item >
+      <ion-label>出口温度</ion-label>
+      <ion-input item-end placeholder="请输入出口温度">{{param.outletTemperature}}</ion-input>
+    </ion-item>
+
+    <ion-item >
+      <ion-label>粮温</ion-label>
+      <ion-input item-end placeholder="请输入粮温">{{param.grainTemperature}}</ion-input>
+    </ion-item>
+
+    <ion-item >
+        <ion-label>操作人</ion-label>
+        <ion-note item-end>{{param.userName}}</ion-note>
+    </ion-item>
+
+    <ion-item >
+        <ion-label>备注</ion-label>
+        <ion-input item-end placeholder="请输入备注">{{param.remark}}</ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-row style="margin: 10px;">
+    <ion-col>
+      <button ion-button (click)="post()" block>提交</button>
+    </ion-col>
+  </ion-row>
+</ion-content>

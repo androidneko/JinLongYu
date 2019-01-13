@@ -173,7 +173,7 @@ export class TyNetworkServiceProvider {
 
   uploadFilePost(base64DataUrl, token, success, failed, progress?) {
     let params = { "fileContent": base64DataUrl };
-    console.log("post:" + AppGlobal.domain +  AppGlobal.API.base64PicUpload + "-->" + JSON.stringify(params));
+    console.log("post:" + AppGlobal.domain +  AppGlobal.API.login + "-->" + JSON.stringify(params));
     
     let sortParams = {};
     let sortKeys = Object.keys(params).sort();
@@ -188,7 +188,7 @@ export class TyNetworkServiceProvider {
     let httpHeader = new HttpHeaders({ "Authorization": token });
     this.http.request(new HttpRequest(
       'POST',
-      AppGlobal.domain +  AppGlobal.API.base64PicUpload,
+      AppGlobal.domain +  AppGlobal.API.login,
       sortParams,
       {
         headers: httpHeader,

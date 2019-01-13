@@ -81,7 +81,7 @@ export class LoginPage extends BasePage {
   tryLogin() {
     //账号登录
     if (this.checkInfoValid()) {
-      this.setRoot("LoginPage","HomePage");
+      //this.setRoot("LoginPage","HomePage");
         return this.login()
       .then(()=>{
         //用户信息整体保存，整体更新，整体读取
@@ -98,16 +98,17 @@ export class LoginPage extends BasePage {
     return new Promise((resolve,reject)=>{
       let loginParam = {};
       loginParam = {
-        userId:this.loginName,
-        password:Md5.hashStr(this.loginPassword).toString().toLowerCase()
-        //password:this.loginPassword
+        loginName:this.loginName,
+        //password:Md5.hashStr(this.loginPassword).toString().toLowerCase()
+        password:this.loginPassword
       };
       this.net.httpPost(AppGlobal.API.login, loginParam, (resp) => {
         this.db.saveString(this.loginName,"username");
 
-        this.db.saveString(Md5.hashStr(this.loginPassword).toString().toLowerCase(),"password");
+        //this.db.saveString(Md5.hashStr(this.loginPassword).toString().toLowerCase(),"password");
         this.db.saveString(resp.sessionId,this.loginName + "_" + AppGlobal.Config.comm.env + "_token");
         AppServiceProvider.getInstance().userinfo.loginName = this.loginName;
+        AppServiceProvider.getInstance().userinfo.userName = resp.content.userName;
         AppServiceProvider.getInstance().userinfo.token = resp.sessionId;
         AppServiceProvider.getInstance().userinfo.avatar = resp.content.avatar;
         resolve();

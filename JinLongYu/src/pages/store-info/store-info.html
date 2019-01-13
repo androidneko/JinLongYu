@@ -18,6 +18,102 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content no-padding>
+
+<ion-list no-margin no-padding>
+  <ion-item >
+    <ion-label>仓号</ion-label>
+    <ion-note item-end style="width: 65%">{{info.warehouseCode}}</ion-note>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>保管员</ion-label>
+    <ion-note item-end style="width: 65%">{{info.storekeeperName}}</ion-note>
+  </ion-item>
+  <ion-item>
+    <ion-label>仓容</ion-label>
+    <ion-note item-end style="width: 65%">{{info.storageCapacity}}</ion-note>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>净长度(直径)</ion-label>
+    <ion-note item-end style="width: 65%">{{info.netLength}}</ion-note>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>净宽度</ion-label>
+    <ion-note item-end style="width: 65%">{{info.netWidth}}</ion-note>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>粮堆高度</ion-label>
+    <ion-note item-end style="width: 65%">{{info.grainHeapHeight}}</ion-note>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>地上笼体积</ion-label>
+    <ion-note item-end style="width: 65%">{{info.overgroundCageVolume}}</ion-note>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>挡粮门体积</ion-label>
+    <ion-note item-end style="width: 65%">{{info.grainGateVolume}}</ion-note>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>空气箱体积</ion-label>
+    <ion-note item-end style="width: 65%">{{info.airBoxVolume}}</ion-note>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>品种</ion-label>
+    <ion-note item-end style="width: 65%">{{info.varieties}}</ion-note>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>入库年月</ion-label>
+    <ion-note item-end style="width: 65%">{{info.warehousingDate}}</ion-note>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>库存</ion-label>
+    <ion-note item-end style="width: 65%">{{info.stock}}</ion-note>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>水分</ion-label>
+    <ion-note item-end style="width: 65%">{{info.waterContent}}</ion-note>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>容重</ion-label>
+    <ion-note item-end style="width: 65%">{{info.bulkDensity}}</ion-note>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>平均粮温</ion-label>
+    <ion-note item-end style="width: 65%">{{info.averageGrainTemperature}}</ion-note>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>熏蒸状态</ion-label>
+    <ion-note item-end style="width: 65%">{{info.fumigationState}}</ion-note>
+  </ion-item>
+
+  <ion-item (click)="aletBigImg(info.ventilationSystemImg)">
+    <ion-label>通风系统</ion-label>
+    <ion-note item-end style="width: 65%">
+      <img-lazy-load default="assets/imgs/default_square_icon.png" src="{{info.ventilationSystemImg}}"></img-lazy-load>
+    </ion-note>
+  </ion-item>
+
+  <ion-item (click)="aletBigImg(info.measuringPointImg)">
+    <ion-label>测温布点</ion-label>
+    <ion-note item-end style="width: 65%">
+      <img-lazy-load default="assets/imgs/default_square_icon.png" src="{{info.measuringPointImg}}"></img-lazy-load>
+    </ion-note>
+  </ion-item>
+</ion-list>
+
 
 </ion-content>

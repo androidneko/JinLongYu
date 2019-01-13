@@ -120,20 +120,12 @@ export class MyApp {
         AppGlobal.Config = JSON.parse(msg);
         AppGlobal.host = AppGlobal.Config.comm[AppGlobal.Config.comm.env].host;
         AppGlobal.domain = AppGlobal.host + AppGlobal.interfacePrefix;
-        if (AppGlobal.host.startsWith("https")){
-          AppGlobal.picturePrefix = AppGlobal.host + "/";
-        }else {
-          AppGlobal.picturePrefix = AppGlobal.host + "/dev-hce/";
-        }
+        AppGlobal.picturePrefix = AppGlobal.host + "/profile/";
         resolve();
       }, (err) => {
         AppGlobal.host = AppGlobal.Config.comm[AppGlobal.Config.comm.env].host;
         AppGlobal.domain = AppGlobal.host + AppGlobal.interfacePrefix;
-        if (AppGlobal.host.startsWith("https")){
-          AppGlobal.picturePrefix = AppGlobal.host + "/";
-        }else {
-          AppGlobal.picturePrefix = AppGlobal.host + "/dev-hce/";
-        }
+        AppGlobal.picturePrefix = AppGlobal.host + "/profile/";
         resolve();
       });
     });

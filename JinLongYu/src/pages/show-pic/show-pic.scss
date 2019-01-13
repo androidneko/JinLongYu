@@ -1,4 +1,4 @@
-page-regular-maintain {
+page-show-pic {
     //设置背景颜色
     ion-content{
         .fixed-content{
@@ -7,13 +7,6 @@ page-regular-maintain {
         .scroll-content{
             background: rgba($color: #000000, $alpha: 0) !important;
         }
-        background: #f7f6f6 !important;
-    }
-
-    .item_bg{
-        padding-top: 5px;
-    }
-    .item_bg:active{
-        background: #eee;
+        background: rgb(250, 250, 250) !important;
     }
 }

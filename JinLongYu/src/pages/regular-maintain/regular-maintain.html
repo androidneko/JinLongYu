@@ -13,6 +13,37 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content no-padding>
+    
+    <ion-list>
+        
+        <ion-item style="background: rgb(221, 221, 221)">
+            <ion-icon name="md-swap" item-start color="primary"></ion-icon>
+            <ion-label>机械通风</ion-label>
+        </ion-item>
+        <ion-item detail-push (click)="gotoOpenAir();">
+            <ion-label>开机</ion-label>
+        </ion-item>
+        <ion-item  detail-push (click)="gotoCloseAir();">
+            <ion-label>关机</ion-label>
+        </ion-item>
+        <ion-item detail-push (click)="gotoShowAir();">
+            <ion-label>显示</ion-label>
+        </ion-item>
 
+
+        <ion-item style="background: #dddddd">
+            <ion-icon name="ios-thermometer-outline" item-start color="primary"></ion-icon>
+            <ion-label>谷物冷却</ion-label>
+        </ion-item>
+        <ion-item detail-push (click)="gotoOpenCooling();">
+            <ion-label>开机</ion-label>
+        </ion-item>
+        <ion-item  detail-push (click)="gotoCloseCooling();">
+            <ion-label>关机</ion-label>
+        </ion-item>
+        <ion-item detail-push (click)="gotoShowCooling();">
+            <ion-label>显示</ion-label>
+        </ion-item>
+    </ion-list>
 </ion-content>

@@ -100,15 +100,15 @@ export class WebTyNetworkServiceProvider {
           let m = res.json();
           console.log("response data:" + JSON.stringify(m));
           //let info = JSON.parse(m);
-          if (m.returnCode == AppGlobal.returnCode.succeed) {
+          if (m.code == AppGlobal.returnCode.succeed) {
             success(m);
           } else {
-            if ('INVALIDTOKEN' == m.returnCode) {
+            if ('INVALIDTOKEN' == m.code) {
               this.events.publish("INVALIDTOKEN");
               //failed(info.returnDes);
             }
             else {
-              failed(m.returnDes);
+              failed(m.message);
             }
           }
         }, 1000);
