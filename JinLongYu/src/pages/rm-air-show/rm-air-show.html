@@ -8,6 +8,11 @@
 
   <ion-navbar>
     <ion-title>显示</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="records()" > 
+        <ion-icon name="time"></ion-icon>
+      </button>
+  </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -25,12 +30,12 @@
         <ion-note item-end>{{param.startTime}}</ion-note>
     </ion-item>
 
-    <ion-item detail-push >
+    <ion-item >
       <ion-label>关机时间</ion-label>
       <ion-note item-end>{{param.endTime}}</ion-note>
     </ion-item>
 
-    <ion-item detail-push >
+    <ion-item >
         <ion-label>通风目的</ion-label>
         <ion-note item-end>{{param.ventilationPurpose}}</ion-note>
     </ion-item>
@@ -42,7 +47,7 @@
 
     <ion-item >
         <ion-label>备注</ion-label>
-        <ion-input item-end placeholder="请输入备注">{{param.showRemark}}</ion-input>
+        <ion-input item-end placeholder="请输入备注" [(ngModel)]="param.showRemark"></ion-input>
     </ion-item>
   </ion-list>
 

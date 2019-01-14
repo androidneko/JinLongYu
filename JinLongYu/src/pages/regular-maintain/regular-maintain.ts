@@ -48,7 +48,7 @@ export class RegularMaintainPage extends BasePage{
 
   gotoShowAir(){
     if (this.checkWareHouse()){
-      this.navCtrl.push("");
+      this.navCtrl.push("RmAirShowPage");
     }
   }
 

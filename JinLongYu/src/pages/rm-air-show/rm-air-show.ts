@@ -24,6 +24,8 @@ export class RmAirShowPage extends BasePage{
     "showRemark":""
   }
 
+  timeList: any = [ { name: '', options: [] } ];
+
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -36,8 +38,46 @@ export class RmAirShowPage extends BasePage{
     console.log('ionViewDidLoad RmAirShowPage');
     this.param['loginName'] = AppServiceProvider.getInstance().userinfo.loginName;
     this.param['sessionId'] = AppServiceProvider.getInstance().userinfo.token;
+    this.getOperationRecord();
+    this.getShowTimeList();
   }
 
+  getShowTimeList(){
+    this.net.httpPost(AppGlobal.API.getMechanicalVentilationTimeList, 
+      {
+        loginName:AppServiceProvider.getInstance().userinfo.loginName,
+        sessionId:AppServiceProvider.getInstance().userinfo.token,
+        warehouseCode:AppGlobal.wareHouse.warehouseCode
+      }, 
+      (resp) => {
+        if (resp.content && resp.content != null){
+            resp.content.forEach(element => {
+              this.timeList[0].options.push({text:element.dateStr,value:element.id + ''});
+            });
+        }
+    }, (error) => {
+      this.toast(error);
+    }, true);
+    
+  }
+
+  getOperationRecord(){
+    this.net.httpPost(AppGlobal.API.getMechanicalVentilationByCode, 
+      {
+        loginName:AppServiceProvider.getInstance().userinfo.loginName,
+        sessionId:AppServiceProvider.getInstance().userinfo.token,
+        warehouseCode:AppGlobal.wareHouse.warehouseCode
+      }, 
+      (resp) => {
+        if (resp.content && resp.content != null){
+          this.param = resp.content;
+          this.param['loginName'] = AppServiceProvider.getInstance().userinfo.loginName;
+          this.param['sessionId'] = AppServiceProvider.getInstance().userinfo.token;
+        }
+    }, (error) => {
+      this.toast(error);
+    }, true);
+  }
 
   post(){
     this.net.httpPost(AppGlobal.API.saveShowMechanicalVentilationById, this.param, 
