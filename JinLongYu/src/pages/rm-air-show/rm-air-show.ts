@@ -38,7 +38,10 @@ export class RmAirShowPage extends BasePage{
     console.log('ionViewDidLoad RmAirShowPage');
     this.param['loginName'] = AppServiceProvider.getInstance().userinfo.loginName;
     this.param['sessionId'] = AppServiceProvider.getInstance().userinfo.token;
-    this.getOperationRecord();
+    this.getOperationRecord("");
+  }
+
+  records(){
     this.getShowTimeList();
   }
 
@@ -51,9 +54,9 @@ export class RmAirShowPage extends BasePage{
       }, 
       (resp) => {
         if (resp.content && resp.content != null){
-            resp.content.forEach(element => {
-              this.timeList[0].options.push({text:element.dateStr,value:element.id + ''});
-            });
+            this.gotoSelect(resp.content);
+        }else {
+          this.toast("暂无历史记录");
         }
     }, (error) => {
       this.toast(error);
@@ -61,12 +64,21 @@ export class RmAirShowPage extends BasePage{
     
   }
 
-  getOperationRecord(){
+  gotoSelect(records){
+    this.navCtrl.push("SelectRecordPage",{callback:this.selectCallback,timeList:records});
+  }
+
+  selectCallback = (item)=>{
+    this.getOperationRecord(item.id+"");
+  }
+
+  getOperationRecord(id){
     this.net.httpPost(AppGlobal.API.getMechanicalVentilationByCode, 
       {
         loginName:AppServiceProvider.getInstance().userinfo.loginName,
         sessionId:AppServiceProvider.getInstance().userinfo.token,
-        warehouseCode:AppGlobal.wareHouse.warehouseCode
+        warehouseCode:AppGlobal.wareHouse.warehouseCode,
+        id:id
       }, 
       (resp) => {
         if (resp.content && resp.content != null){

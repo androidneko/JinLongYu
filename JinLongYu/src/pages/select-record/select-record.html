@@ -1,0 +1,22 @@
+<!--
+  Generated template for the SelectRecordPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>请选择</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content no-padding>
+  <ion-list >
+    <ion-item detail-push *ngFor="let item of records" (click)="select(item)">
+      <ion-label>{{item.dateStr}}</ion-label>
+    </ion-item>
+    <ion-custom-empty *ngIf="records.length==0"></ion-custom-empty>
+  </ion-list>
+</ion-content>
