@@ -54,19 +54,19 @@ export class RegularMaintainPage extends BasePage{
 
   gotoOpenCooling(){
     if (this.checkWareHouse()){
-      this.navCtrl.push("");
+      this.navCtrl.push("RmCoolingOnPage");
     }
   }
 
   gotoCloseCooling(){
     if (this.checkWareHouse()){
-      this.navCtrl.push("");
+      this.navCtrl.push("RmCoolingOffPage");
     }
   }
 
   gotoShowCooling(){
     if (this.checkWareHouse()){
-      this.navCtrl.push("");
+      this.navCtrl.push("RmCoolingShowPage");
     }
   }
 }

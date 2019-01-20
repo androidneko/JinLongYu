@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ToastController, AlertController, 
 import { BasePage } from '../base/base';
 import { TyNetworkServiceProvider } from '../../providers/ty-network-service/ty-network-service';
 import { AppGlobal, AppServiceProvider } from '../../providers/app-service/app-service';
+import { DeviceIntefaceServiceProvider } from '../../providers/device-inteface-service/device-inteface-service';
 
 /**
  * Generated class for the StoreInfoPage page.
@@ -69,6 +70,7 @@ export class StoreInfoPage extends BasePage{
     public alertCtrl:AlertController,
     public modalCtrl: ModalController,
     public net: TyNetworkServiceProvider,
+    public device: DeviceIntefaceServiceProvider,
     public toastCtrl: ToastController) {
     super(navCtrl,navParams,toastCtrl);
   }
@@ -80,7 +82,15 @@ export class StoreInfoPage extends BasePage{
   ionViewDidLoad() {
     console.log('ionViewDidLoad StoreInfoPage');
     this.getDict();
-    this.getWareHouseInfo();
+  }
+
+  scan(){
+    this.device.push("qrCodeScan","扫描仓库二维码",(qrcode)=>{
+      this.qrCode = qrcode;
+      this.getWareHouseInfo();
+    },(err)=>{
+      this.toast(err);
+    });
   }
 
   getDict(){

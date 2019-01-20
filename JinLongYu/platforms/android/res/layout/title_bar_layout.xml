@@ -9,13 +9,14 @@
     <LinearLayout
         android:id="@+id/app_left_view"
         android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
+        android:layout_height="35dp"
         android:layout_alignParentLeft="true"
         android:background="@drawable/image_back"
+      android:layout_margin="10dp"
         android:clickable="true"
-        android:minWidth="45dp"
+        android:minWidth="10dp"
         android:orientation="horizontal"
-        android:visibility="gone" >
+        android:visibility="visible" >
     </LinearLayout>
 
     <TextView

@@ -12,6 +12,7 @@ import android.webkit.WebView;
 
 import com.androidcat.acnet.manager.BaseManager;
 import com.androidcat.acnet.okhttp.callback.RawResponseHandler;
+import com.androidcat.jly.cordova.plugin.qrcode.QrCodeHelper;
 import com.androidcat.jly.utils.DeviceUuidFactory;
 import com.androidcat.utilities.LogUtil;
 import com.androidcat.utilities.Utils;
@@ -40,69 +41,15 @@ import java.util.Map;
 
 public class TyPluginCoreWorker {
 
-  public static void getContacts(Activity activity, final org.apache.cordova.CallbackContext callbackContext) {
-    //联系人的Uri，也就是content://com.android.contacts/contacts
-    Uri uri = ContactsContract.Contacts.CONTENT_URI;
-    //指定获取_id和display_name两列数据，display_name即为姓名
-    String[] projection = new String[]{
-      ContactsContract.Contacts._ID,
-      ContactsContract.Contacts.DISPLAY_NAME
-    };
-    //根据Uri查询相应的ContentProvider，cursor为获取到的数据集
-    Cursor cursor = activity.getContentResolver().query(uri, projection, null, null, null);
-    JSONObject data = new JSONObject();
-    JSONObject contact = new JSONObject();
-    JSONArray list = new JSONArray();
-    if (cursor != null && cursor.moveToFirst()) {
-      do {
-        JSONObject person = new JSONObject();
-        Long id = cursor.getLong(0);
-        //获取姓名
-        String name = cursor.getString(1);
-        //指定获取NUMBER这一列数据
-        String[] phoneProjection = new String[]{
-          ContactsContract.CommonDataKinds.Phone.NUMBER
-        };
-        try {
-          person.put("name",name);
-        } catch (JSONException e) {
-          e.printStackTrace();
-        }
-
-        //根据联系人的ID获取此人的电话号码
-        Cursor phonesCusor = activity.getContentResolver().query(
-          ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-          phoneProjection,
-          ContactsContract.CommonDataKinds.Phone.CONTACT_ID + "=" + id,
-          null,
-          null);
-
-        JSONArray numbers = new JSONArray();
-        //因为每个联系人可能有多个电话号码，所以需要遍历
-        if (phonesCusor != null && phonesCusor.moveToFirst()) {
-          do {
-            String num = phonesCusor.getString(0);
-            numbers.put(num);
-          } while (phonesCusor.moveToNext());
-        }
-        try {
-          person.put("numbers",numbers);
-        } catch (JSONException e) {
-          e.printStackTrace();
-        }
-        list.put(person);
-      } while (cursor.moveToNext());
-    }
-    try {
-
-      contact.put("contact",list);
-      data.put("data",contact);
-      data.put("returnCode","SUCCESS");
-      callbackContext.success(data.toString());
-    } catch (JSONException e) {
-      e.printStackTrace();
-      callbackContext.error(e.getMessage());
-    }
+  /**
+   * 用于处理二维码生成或识别的接口.
+   *
+   * @param plugin          连接此接口的插件
+   * @param callbackContext 回调函数句柄；向js返回数据靠此
+   */
+  public static void qrcode(CordovaPlugin plugin, String title, final CallbackContext callbackContext) {
+    QrCodeHelper qrCodeHelper = QrCodeHelper.getQrCodeHelper(plugin, callbackContext);
+    qrCodeHelper.gotoQrCapture(title);
   }
 
   public static void clearJnbLocalStorage(final Activity activity){

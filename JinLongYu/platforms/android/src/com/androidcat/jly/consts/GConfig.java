@@ -73,17 +73,17 @@ public class GConfig {
     public Https https = new Https();
 
     public class Prod{
-      public String host = "https://iot.whty.com.cn";
+      public String host = "http://220.249.102.138:8018";
       public String traceUrl = "http://10.8.15.33:8888/pre/collectMsg";
     }
 
     public class Test{
-      public String host = "http://yfzx.whty.com.cn:3008";
+      public String host = "http://220.249.102.138:8018";
       public String traceUrl = "http://10.8.15.33:8888/pre/collectMsg";
     }
 
     public class Dev{
-      public String host = "http://yfzx.whty.com.cn:3008";
+      public String host = "http://220.249.102.138:8018";
       public String traceUrl = "http://10.8.15.33:8888/pre/collectMsg";
     }
 

@@ -7,12 +7,61 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>daily-maintain</ion-title>
+    <ion-title>日常维护</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content no-padding>
+    
+    <ion-list>
+        
+        <ion-item style="background: rgb(221, 221, 221)">
+            <ion-icon name="filing" item-start color="primary"></ion-icon>
+            <ion-label>常规保管</ion-label>
+        </ion-item>
+        <ion-item detail-push (click)="gotoCustody();">
+            <ion-label>常规保管</ion-label>
+        </ion-item>
+        <ion-item detail-push (click)="gotoShowCustody();">
+            <ion-label>显示</ion-label>
+        </ion-item>
 
+
+        <ion-item style="background: #dddddd">
+            <ion-icon name="copy" item-start color="primary"></ion-icon>
+            <ion-label>熏蒸记录</ion-label>
+        </ion-item>
+        <ion-item detail-push (click)="gotofumitaion();">
+            <ion-label>熏蒸操作</ion-label>
+        </ion-item>
+        <ion-item  detail-push (click)="gotoCg();">
+            <ion-label>浓度与散气</ion-label>
+        </ion-item>
+        <ion-item detail-push (click)="gotoFumitationRecord();">
+            <ion-label>熏蒸操作记录</ion-label>
+        </ion-item>
+        <ion-item  detail-push (click)="gotoCgRecord();">
+          <ion-label>浓度与散气记录</ion-label>
+      </ion-item>
+
+
+      <ion-item style="background: rgb(221, 221, 221)">
+        <ion-icon name="build" item-start color="primary"></ion-icon>
+        <ion-label>设备维护</ion-label>
+      </ion-item>
+      <ion-item detail-push (click)="gotoPingGears();">
+        <ion-label>平仓房设备</ion-label>
+      </ion-item>
+      <ion-item detail-push (click)="gotoTongGears();">
+        <ion-label>机械楼设备</ion-label>
+      </ion-item>
+      <ion-item detail-push (click)="gotoPingGearsRecord();">
+        <ion-label>平仓房设备记录</ion-label>
+      </ion-item>
+      <ion-item detail-push (click)="gotoTongGearsRecord();">
+        <ion-label>机械楼设备记录</ion-label>
+      </ion-item>
+    </ion-list>
 </ion-content>

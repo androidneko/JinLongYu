@@ -7,12 +7,29 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>rm-cooling-off</ion-title>
+    <ion-title>关机</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content no-padding>
+  <ion-list no-margin no-padding>
+    <ion-item >
+      <ion-label>仓号</ion-label>
+      <ion-note item-end>{{param.warehouseCode}}</ion-note>
+    </ion-item>
 
+    <ion-item >
+        <ion-label>关机时间</ion-label>
+        <ion-note item-end>{{param.endTime}}</ion-note>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-row style="margin: 15px;">
+    <ion-col>
+      <button ion-button (click)="post()" block>关机</button>
+    </ion-col>
+  </ion-row>
 </ion-content>

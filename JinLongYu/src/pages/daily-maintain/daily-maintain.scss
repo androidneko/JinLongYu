@@ -1,3 +1,22 @@
 page-daily-maintain {
+    //设置背景颜色
+    ion-content{
+        .fixed-content{
+            background: rgba($color: #000000, $alpha: 0) !important;
+        }
+        .scroll-content{
+            background: rgba($color: #000000, $alpha: 0) !important;
+        }
+        background: #f7f6f6 !important;
+    }
 
+    .item_bg{
+        padding-top: 5px;
+    }
+    .item_bg:active{
+        background: #eee;
+    }
+    // .item-block{
+    //     min-height: 4.0rem !important;
+    // }
 }

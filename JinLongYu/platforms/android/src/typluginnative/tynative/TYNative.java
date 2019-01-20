@@ -2,9 +2,11 @@ package typluginnative;
 
 import android.content.Intent;
 
-import com.androidcat.utilities.LogUtil;
 import com.androidcat.jly.cordova.manager.TyPluginManager;
 import com.androidcat.jly.cordova.plugin.ITyPlugin;
+import com.androidcat.jly.cordova.plugin.TyPluginRequestCode;
+import com.androidcat.jly.cordova.plugin.qrcode.QrCodeHelper;
+import com.androidcat.utilities.LogUtil;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -105,10 +107,10 @@ public class TYNative extends CordovaPlugin implements ITyPlugin {
 
   @Override
   public void onActivityResult(int requestCode, int resultCode, Intent intent) {
-//    if (requestCode == TyBasicRequestCode.REQUEST_QRCODE_SCAN){
-//      if (QrCodeHelperForCordova.getQrCodeHelper() != null){
-//        QrCodeHelperForCordova.getQrCodeHelper().onActivityResult(requestCode,resultCode,intent);
-//      }
-//    }
+    if (requestCode == TyPluginRequestCode.REQUEST_QRCODE_SCAN){
+      if (QrCodeHelper.getQrCodeHelper() != null){
+        QrCodeHelper.getQrCodeHelper().onActivityResult(requestCode,resultCode,intent);
+      }
+    }
   }
 }

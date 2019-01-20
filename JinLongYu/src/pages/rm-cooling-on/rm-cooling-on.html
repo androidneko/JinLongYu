@@ -27,7 +27,7 @@
 
     <ion-item detail-push >
         <ion-label>谷冷机功率</ion-label>
-        <ion-multi-picker  item-end [(ngModel)]="param.powerGrainCooler" [multiPickerColumns]="coolerPowers" placeholder="请选择" doneText="确定" cancelText="取消"></ion-multi-picker>
+        <ion-multi-picker  item-end [(ngModel)]="param.powerGrainCooler" [multiPickerColumns]="coolingMachinePowers" placeholder="请选择" doneText="确定" cancelText="取消"></ion-multi-picker>
     </ion-item>
 
     <ion-item detail-push >
@@ -37,13 +37,13 @@
 
     <ion-item >
       <ion-label>出口温度</ion-label>
-      <ion-input item-end placeholder="请输入出口温度">{{param.outletTemperature}}</ion-input>
+      <ion-input item-end placeholder="请输入出口温度" [(ngModel)]="param.outletTemperature"></ion-input>
     </ion-item>
 
-    <ion-item >
+    <!-- <ion-item >
       <ion-label>粮温</ion-label>
       <ion-input item-end placeholder="请输入粮温">{{param.grainTemperature}}</ion-input>
-    </ion-item>
+    </ion-item> -->
 
     <ion-item >
         <ion-label>操作人</ion-label>
@@ -52,7 +52,7 @@
 
     <ion-item >
         <ion-label>备注</ion-label>
-        <ion-input item-end placeholder="请输入备注">{{param.remark}}</ion-input>
+        <ion-input item-end placeholder="请输入备注" [(ngModel)]="param.remark"></ion-input>
     </ion-item>
   </ion-list>
 

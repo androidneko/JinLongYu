@@ -14,6 +14,7 @@ import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
 import android.view.Window;
 
+import com.androidcat.jly.R;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 import com.google.zxing.core.CameraManager;
@@ -53,11 +54,11 @@ public class CaptureActivity extends BaseActivity implements Callback {
 		BaseActivity.needOpenTimmer = true;
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
-		setContentView(ResourceUtil.getLayoutId("R.layout.activity_capture"));
+		setContentView(R.layout.activity_capture);
 		TitleBarManager.create(this).setLeftButton().setTitle("扫码").show();
 		CameraManager.init(getApplication());
 
-		viewfinderView = (ViewfinderView) findViewById(ResourceUtil.getId("R.id.viewfinder_view"));
+		viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
 		hasSurface = false;
 		inactivityTimer = new InactivityTimer(this);
 	}
@@ -65,7 +66,7 @@ public class CaptureActivity extends BaseActivity implements Callback {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		SurfaceView surfaceView = (SurfaceView) findViewById(ResourceUtil.getId("R.id.preview_view"));
+		SurfaceView surfaceView = (SurfaceView) findViewById(R.id.preview_view);
 		SurfaceHolder surfaceHolder = surfaceView.getHolder();
 		if (hasSurface) {
 			initCamera(surfaceHolder);
@@ -168,7 +169,7 @@ public class CaptureActivity extends BaseActivity implements Callback {
 			mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
 			mediaPlayer.setOnCompletionListener(beepListener);
 
-			AssetFileDescriptor file = getResources().openRawResourceFd(ResourceUtil.getRawId("R.raw.beep"));
+			AssetFileDescriptor file = getResources().openRawResourceFd(R.raw.beep);
 			try {
 				mediaPlayer.setDataSource(file.getFileDescriptor(),
 						file.getStartOffset(), file.getLength());

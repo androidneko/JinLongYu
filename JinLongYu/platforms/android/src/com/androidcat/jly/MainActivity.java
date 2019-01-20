@@ -28,11 +28,9 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.androidcat.jly.ui.CheckPermissionActivity;
 import com.androidcat.utilities.LogUtil;
 
 import org.apache.cordova.CallbackContext;
-import org.apache.cordova.CordovaActivity;
 import org.apache.cordova.CordovaPreferences;
 import org.json.JSONObject;
 

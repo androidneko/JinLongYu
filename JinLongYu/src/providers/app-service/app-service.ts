@@ -81,9 +81,9 @@ export class AppGlobal {
         getWarehouseByCode:'/getWarehouseByCode',//短信验证码
         getDict: '/getDict', //注册
         getMechanicalVentilationByCodeOpen: '/getMechanicalVentilationByCodeOpen', //忘记密码
-        modifyPassword: '/api/v1/account/modifyPwd', //修改密码
+        modifyPassword: '/resetPwd', //修改密码
         saveOpenMechanicalVentilationByCode: '/saveOpenMechanicalVentilationByCode', //编辑用户信息
-        modifyPwd: '/users/pwd/modify', //获取用户信息
+        modifyPwd: '/resetPwd', //获取用户信息
         userInfo: '/users/info', //获取任务列表列表
         saveCloseMechanicalVentilationByCode:'/saveCloseMechanicalVentilationByCode',
         getMechanicalVentilationByCode:'/getMechanicalVentilationByCode',
@@ -95,22 +95,22 @@ export class AppGlobal {
         getGrainCoolingByCode:'/getGrainCoolingByCode',
         getGrainCoolingTimeList:'/getGrainCoolingTimeList',
         saveGrainCoolingById:'/saveGrainCoolingById',
-        applyConfirm:'/card/app/ackTransitBundle',
-        falseLogin:'/api/falseLogin',
-        prepSpleAcc:'/api/AcceptSample/Post',
-        prepSpleMake:'/api/MadeSampleSearch/Post',
-        prepSpleFlow:'/api/MadeSampleFlow/Post',
-        prepSampleParams: "/api/MadeSampleParams/Post",
-        unitInfo:'/api/UnitInfo/Post',
-        appType:'/users/app/type',
-        appInfo:'/users/app/appByType',
-        flowPackList:'/api/PackageList/Post',
-        flowLabList:'/api/Laboratory/Post',
-        flowPackNew:'/api/CreatePackage/Post',
-        flowSpleAccSearch:'/api/AcceptSubSample/Post',
-        flowSpleAcc:'/api/AcceptSub/Post',
-        flowPackFlow:'/api/PackageFlow/Post',
-        flowPackInfo:'/api/PackageContent/Post',
+        getRegularCustodyByCodeOpen:'/getRegularCustodyByCodeOpen',
+        saveRegularCustodyByCode:'/saveRegularCustodyByCode',
+        saveRegularCustodyById:'/saveRegularCustodyById',
+        getRegularCustodyByCode:'/getRegularCustodyByCode',
+        getRegularCustodyTimeList:'/getRegularCustodyTimeList',
+        saveEquipmentMaintenanceByCode: "/saveEquipmentMaintenanceByCode",
+        getEquipmentMaintenanceByCode:'/getEquipmentMaintenanceByCode',
+        getEquipmentMaintenanceTimeList:'/getEquipmentMaintenanceTimeList',
+        getFumigationOperationByCode:'/getFumigationOperationByCode',
+        saveFumigationOperationByCode:'/saveFumigationOperationByCode',
+        saveConcentrationExhaustGasByCode:'/saveConcentrationExhaustGasByCode',
+        getFumigationOperationByWarehouseCode:'/getFumigationOperationByWarehouseCode',
+        getFumigationOperationTimeList:'/getFumigationOperationTimeList',
+        getConcentrationExhaustGasByWarehouseCode:'/getConcentrationExhaustGasByWarehouseCode',
+        getConcentrationExhaustGasTimeList:'/getConcentrationExhaustGasTimeList',
+        getEquipmentByCode:'/getEquipmentByCode',
         flowPackAddSple:'/api/AddPackageItem/Post',
         flowPacking:'/api/UpdatePackageStatu/Post',
         flowPackDel:'/api/PackageDelete/Post',

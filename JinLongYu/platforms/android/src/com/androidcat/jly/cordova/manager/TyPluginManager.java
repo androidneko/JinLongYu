@@ -215,12 +215,9 @@ public class TyPluginManager {
         plugin.cordova.getActivity().startActivity(intent);
         callbackContext.success();*/
       }
-      else if ("searchCode".equals(code)){
-//        QrCodeHelperForCordova qrCodeHelper = QrCodeHelperForCordova.getQrCodeHelper(plugin, callbackContext);
-//        qrCodeHelper.gotoQrCapture();
-      }
-      else if ("contacts".equals(code)){
-        TyPluginCoreWorker.getContacts(plugin.cordova.getActivity(),callbackContext);
+      else if("qrCodeScan".equals(code)){
+        String title = jsonObject.optString("commandData");
+        TyPluginCoreWorker.qrcode(plugin, title,callbackContext);
       } else if ("webCacheClear".equals(code)){
         TyPluginCoreWorker.clearJnbLocalStorage(plugin.cordova.getActivity());
       } else if("getVersion".equals(code)){

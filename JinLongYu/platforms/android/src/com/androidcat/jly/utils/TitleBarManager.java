@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.androidcat.jly.R;
 import com.androidcat.jly.application.AppConstants;
 
 /**
@@ -58,10 +59,10 @@ public class TitleBarManager {
 		this.activity = activity;
 
 		this.imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
-		this.leftLayout = (LinearLayout) activity.findViewById(ResourceUtil.getId("R.id.app_left_view"));
-		this.rightLayout = (LinearLayout) activity.findViewById(ResourceUtil.getId("R.id.app_right_view"));
-		this.titleView = (TextView) activity.findViewById(ResourceUtil.getId("R.id.app_title_text"));
-		this.editText = (EditText) activity.findViewById(ResourceUtil.getId("R.id.editText1"));
+		this.leftLayout = (LinearLayout) activity.findViewById(R.id.app_left_view);
+		this.rightLayout = (LinearLayout) activity.findViewById(R.id.app_right_view);
+		this.titleView = (TextView) activity.findViewById(R.id.app_title_text);
+		this.editText = (EditText) activity.findViewById(R.id.editText1);
 
 		// set gone as default
 		this.titleView.setVisibility(View.GONE);
