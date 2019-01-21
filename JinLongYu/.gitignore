@@ -77,4 +77,5 @@ node_modules/
 */*/*/build/
 /package-lock.json
 /platforms/android/assets/www
+*/release/
 

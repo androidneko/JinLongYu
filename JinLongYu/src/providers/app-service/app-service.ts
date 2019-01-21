@@ -153,7 +153,7 @@ export class AppServiceProvider {
     deptUuid:"",
     phonenumber:"",
     token:"",
-    pasFlag:""
+    posts:""
   };
 
   constructor() {

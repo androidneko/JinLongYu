@@ -21,10 +21,10 @@
             <ion-icon name="filing" item-start color="primary"></ion-icon>
             <ion-label>常规保管</ion-label>
         </ion-item>
-        <ion-item detail-push (click)="gotoCustody();">
-            <ion-label>常规保管</ion-label>
+        <ion-item class="item_bg" detail-push (click)="gotoCustody();">
+            <ion-label [ngStyle]="{'color':posts !== '管理人员' ? 'black' : 'lightgray'}">常规保管</ion-label>
         </ion-item>
-        <ion-item detail-push (click)="gotoShowCustody();">
+        <ion-item class="item_bg" detail-push (click)="gotoShowCustody();">
             <ion-label>显示</ion-label>
         </ion-item>
 
@@ -33,16 +33,16 @@
             <ion-icon name="copy" item-start color="primary"></ion-icon>
             <ion-label>熏蒸记录</ion-label>
         </ion-item>
-        <ion-item detail-push (click)="gotofumitaion();">
-            <ion-label>熏蒸操作</ion-label>
+        <ion-item class="item_bg" detail-push (click)="gotofumitaion();">
+            <ion-label [ngStyle]="{'color':posts !== '管理人员' ? 'black' : 'lightgray'}">熏蒸操作</ion-label>
         </ion-item>
-        <ion-item  detail-push (click)="gotoCg();">
-            <ion-label>浓度与散气</ion-label>
+        <ion-item class="item_bg"  detail-push (click)="gotoCg();">
+            <ion-label [ngStyle]="{'color':posts !== '管理人员' ? 'black' : 'lightgray'}">浓度与散气</ion-label>
         </ion-item>
-        <ion-item detail-push (click)="gotoFumitationRecord();">
+        <ion-item class="item_bg" detail-push (click)="gotoFumitationRecord();">
             <ion-label>熏蒸操作记录</ion-label>
         </ion-item>
-        <ion-item  detail-push (click)="gotoCgRecord();">
+        <ion-item class="item_bg"  detail-push (click)="gotoCgRecord();">
           <ion-label>浓度与散气记录</ion-label>
       </ion-item>
 
@@ -51,16 +51,16 @@
         <ion-icon name="build" item-start color="primary"></ion-icon>
         <ion-label>设备维护</ion-label>
       </ion-item>
-      <ion-item detail-push (click)="gotoPingGears();">
-        <ion-label>平仓房设备</ion-label>
+      <ion-item class="item_bg" detail-push (click)="gotoPingGears();">
+        <ion-label [ngStyle]="{'color':posts !== '管理人员' ? 'black' : 'lightgray'}">平仓房设备</ion-label>
       </ion-item>
-      <ion-item detail-push (click)="gotoTongGears();">
-        <ion-label>机械楼设备</ion-label>
+      <ion-item class="item_bg" detail-push (click)="gotoTongGears();">
+        <ion-label [ngStyle]="{'color':posts !== '管理人员' ? 'black' : 'lightgray'}">机械楼设备</ion-label>
       </ion-item>
-      <ion-item detail-push (click)="gotoPingGearsRecord();">
+      <ion-item class="item_bg" detail-push (click)="gotoPingGearsRecord();">
         <ion-label>平仓房设备记录</ion-label>
       </ion-item>
-      <ion-item detail-push (click)="gotoTongGearsRecord();">
+      <ion-item class="item_bg" detail-push (click)="gotoTongGearsRecord();">
         <ion-label>机械楼设备记录</ion-label>
       </ion-item>
     </ion-list>

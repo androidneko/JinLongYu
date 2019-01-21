@@ -21,13 +21,13 @@
             <ion-icon name="md-swap" item-start color="primary"></ion-icon>
             <ion-label>机械通风</ion-label>
         </ion-item>
-        <ion-item detail-push (click)="gotoOpenAir();">
-            <ion-label>开机</ion-label>
+        <ion-item class="item_bg" detail-push (click)="gotoOpenAir();">
+            <ion-label [ngStyle]="{'color':posts !== '管理人员' ? 'black' : 'lightgray'}">开机</ion-label>
         </ion-item>
-        <ion-item  detail-push (click)="gotoCloseAir();">
-            <ion-label>关机</ion-label>
+        <ion-item class="item_bg"  detail-push (click)="gotoCloseAir();">
+            <ion-label [ngStyle]="{'color':posts !== '管理人员' ? 'black' : 'lightgray'}">关机</ion-label>
         </ion-item>
-        <ion-item detail-push (click)="gotoShowAir();">
+        <ion-item class="item_bg" detail-push (click)="gotoShowAir();">
             <ion-label>显示</ion-label>
         </ion-item>
 
@@ -36,13 +36,13 @@
             <ion-icon name="ios-thermometer-outline" item-start color="primary"></ion-icon>
             <ion-label>谷物冷却</ion-label>
         </ion-item>
-        <ion-item detail-push (click)="gotoOpenCooling();">
-            <ion-label>开机</ion-label>
+        <ion-item class="item_bg" detail-push (click)="gotoOpenCooling();">
+            <ion-label [ngStyle]="{'color':posts !== '管理人员' ? 'black' : 'lightgray'}">开机</ion-label>
         </ion-item>
-        <ion-item  detail-push (click)="gotoCloseCooling();">
-            <ion-label>关机</ion-label>
+        <ion-item class="item_bg"  detail-push (click)="gotoCloseCooling();">
+            <ion-label [ngStyle]="{'color':posts !== '管理人员' ? 'black' : 'lightgray'}">关机</ion-label>
         </ion-item>
-        <ion-item detail-push (click)="gotoShowCooling();">
+        <ion-item class="item_bg" detail-push (click)="gotoShowCooling();">
             <ion-label>显示</ion-label>
         </ion-item>
     </ion-list>

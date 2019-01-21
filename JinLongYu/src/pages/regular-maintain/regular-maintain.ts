@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { BasePage } from '../base/base';
-import { AppGlobal } from '../../providers/app-service/app-service';
+import { AppGlobal, AppServiceProvider } from '../../providers/app-service/app-service';
 
 /**
  * Generated class for the RegularMaintainPage page.
@@ -17,8 +17,14 @@ import { AppGlobal } from '../../providers/app-service/app-service';
 })
 export class RegularMaintainPage extends BasePage{
 
+  posts:string = "";
+
   constructor(public navCtrl: NavController, public navParams: NavParams,public toastCtrl: ToastController) {
     super(navCtrl,navParams,toastCtrl);
+  }
+
+  ionViewWillEnter(){
+    this.posts = AppServiceProvider.getInstance().userinfo.posts;
   }
 
   ionViewDidLoad() {
@@ -35,12 +41,18 @@ export class RegularMaintainPage extends BasePage{
   }
 
   gotoOpenAir(){
+    if(this.posts == '管理人员'){
+      return;
+    }
     if (this.checkWareHouse()){
       this.navCtrl.push("RmAirOnPage");
     }
   }
 
   gotoCloseAir(){
+    if(this.posts == '管理人员'){
+      return;
+    }
     if (this.checkWareHouse()){
       this.navCtrl.push("RmAirOffPage");
     }
@@ -53,12 +65,18 @@ export class RegularMaintainPage extends BasePage{
   }
 
   gotoOpenCooling(){
+    if(this.posts == '管理人员'){
+      return;
+    }
     if (this.checkWareHouse()){
       this.navCtrl.push("RmCoolingOnPage");
     }
   }
 
   gotoCloseCooling(){
+    if(this.posts == '管理人员'){
+      return;
+    }
     if (this.checkWareHouse()){
       this.navCtrl.push("RmCoolingOffPage");
     }

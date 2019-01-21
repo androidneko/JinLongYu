@@ -110,6 +110,7 @@ export class LoginPage extends BasePage {
         AppServiceProvider.getInstance().userinfo.loginName = this.loginName;
         AppServiceProvider.getInstance().userinfo.userName = resp.content.userName;
         AppServiceProvider.getInstance().userinfo.token = resp.sessionId;
+        AppServiceProvider.getInstance().userinfo.posts = resp.content.posts;
         AppServiceProvider.getInstance().userinfo.avatar = AppGlobal.picturePrefix +  resp.content.avatar;
         resolve();
       }, (error) => {

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { BasePage } from '../base/base';
-import { AppGlobal } from '../../providers/app-service/app-service';
+import { AppGlobal, AppServiceProvider } from '../../providers/app-service/app-service';
 
 /**
  * Generated class for the DailyMaintainPage page.
@@ -17,10 +17,14 @@ import { AppGlobal } from '../../providers/app-service/app-service';
 })
 export class DailyMaintainPage extends BasePage{
 
+  posts:string = "";
   constructor(public navCtrl: NavController, public navParams: NavParams,public toastCtrl: ToastController) {
     super(navCtrl,navParams,toastCtrl);
   }
 
+  ionViewWillEnter(){
+    this.posts = AppServiceProvider.getInstance().userinfo.posts;
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DailyMaintainPage');
@@ -36,6 +40,9 @@ export class DailyMaintainPage extends BasePage{
   }
 
   gotoCustody(){
+    if(this.posts == '管理人员'){
+      return;
+    }
     if (this.checkWareHouse()){
       this.navCtrl.push("RegularCustodyPage");
     }
@@ -48,6 +55,9 @@ export class DailyMaintainPage extends BasePage{
   }
 
   gotofumitaion(){
+    if(this.posts == '管理人员'){
+      return;
+    }
     if (this.checkWareHouse()){
       this.navCtrl.push("FumigationPage");
     }
@@ -60,6 +70,9 @@ export class DailyMaintainPage extends BasePage{
   }
 
   gotoCg(){
+    if(this.posts == '管理人员'){
+      return;
+    }
     if (this.checkWareHouse()){
       this.navCtrl.push("ConcentrationGasPage");
     }
@@ -72,6 +85,9 @@ export class DailyMaintainPage extends BasePage{
   }
 
   gotoPingGears(){
+    if(this.posts == '管理人员'){
+      return;
+    }
     if (this.checkWareHouse()){
       this.navCtrl.push("PingEquipmentPage");
     }
@@ -84,6 +100,9 @@ export class DailyMaintainPage extends BasePage{
   }
 
   gotoTongGears(){
+    if(this.posts == '管理人员'){
+      return;
+    }
     if (this.checkWareHouse()){
       this.navCtrl.push("TongEquipmentPage");
     }
