@@ -12,9 +12,13 @@ import android.os.Vibrator;
 import android.view.SurfaceHolder;
 import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
+import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.androidcat.jly.R;
+import com.androidcat.jly.ui.OnSingleClickListener;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 import com.google.zxing.core.CameraManager;
@@ -40,14 +44,19 @@ public class CaptureActivity extends BaseActivity implements Callback {
 
 	private CaptureActivityHandler handler;
 	private ViewfinderView viewfinderView;
+	private View lightView;
+	private ImageView lightIv;
+	private TextView lightTv;
 	private boolean hasSurface;
 	private Vector<BarcodeFormat> decodeFormats;
 	private String characterSet;
 	private InactivityTimer inactivityTimer;
 	private MediaPlayer mediaPlayer;
+	private CameraManager mCameraManager;
 	private boolean playBeep;
 	private static final float BEEP_VOLUME = 0.10f;
 	private boolean vibrate;
+	private boolean isFlashlightOn = false;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -57,10 +66,31 @@ public class CaptureActivity extends BaseActivity implements Callback {
 		setContentView(R.layout.activity_capture);
 		TitleBarManager.create(this).setLeftButton().setTitle("扫码").show();
 		CameraManager.init(getApplication());
+		mCameraManager = CameraManager.get();
 
 		viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
+		lightView = findViewById(R.id.touchView);
+		lightIv = findViewById(R.id.lightIv);
+		lightTv = findViewById(R.id.lightTv);
 		hasSurface = false;
 		inactivityTimer = new InactivityTimer(this);
+
+		lightView.setOnClickListener(new OnSingleClickListener() {
+			@Override
+			public void onSingleClick(View view) {
+				if (isFlashlightOn){
+					mCameraManager.setTorch(false);
+					isFlashlightOn = false;
+					lightIv.setBackgroundResource(R.drawable.scan_qrcode_flash_light_off);
+					lightTv.setText("打开手电筒");
+				}else {
+					mCameraManager.setTorch(true);
+					isFlashlightOn = true;
+					lightIv.setBackgroundResource(R.drawable.scan_qrcode_flash_light_on);
+					lightTv.setText("关闭手电筒");
+				}
+			}
+		});
 	}
 
 	@Override

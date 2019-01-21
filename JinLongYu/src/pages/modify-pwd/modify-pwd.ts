@@ -2,8 +2,7 @@ import { BasePage } from './../base/base';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ToastController, Events } from 'ionic-angular';
 import { TyNetworkServiceProvider } from '../../providers/ty-network-service/ty-network-service';
-import { AppGlobal } from '../../providers/app-service/app-service';
-import { Md5 } from 'ts-md5/dist/md5';
+import { AppGlobal, AppServiceProvider } from '../../providers/app-service/app-service';
 import { DeviceIntefaceServiceProvider } from '../../providers/device-inteface-service/device-inteface-service';
 
 
@@ -47,21 +46,20 @@ export class ModifyPwdPage extends BasePage {
     }
     this.net.httpPost(AppGlobal.API.modifyPwd,
       {
-        //pwd:this.oldPassword,
-        pwd:Md5.hashStr(this.oldPassword).toString().toLowerCase(),
-        newPwd:Md5.hashStr(this.newPassword).toString().toLowerCase()
-        //newPwd:this.newPassword
-      },resp => {
-      //let obj = JSON.parse(msg);
-      if (resp.returnCode == AppGlobal.returnCode.succeed) {
+        loginName:AppServiceProvider.getInstance().userinfo.loginName,
+        sessionId:AppServiceProvider.getInstance().userinfo.token,
+        oldPassword:this.oldPassword,
+        // pwd:Md5.hashStr(this.oldPassword).toString().toLowerCase(),
+        // newPwd:Md5.hashStr(this.newPassword).toString().toLowerCase()
+        password:this.newPassword
+      },
+      (resp) => {
         this.toast("修改成功");
         this.events.publish('logoutNotification');
-      }else{
-        this.toast(resp.returnDes);
-      }
-    },error => {
-      this.toast(error);
-    },true);
+      },
+      (error) => {
+        this.toast(error);
+      },true);
   }
 
   checkIfPwdOk(oldPassword, newPassword,confirmPassword){

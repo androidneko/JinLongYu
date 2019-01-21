@@ -10,35 +10,37 @@
         <ion-icon ios="ios-backwhite"></ion-icon>
       </button>
       <ion-title>修改密码</ion-title>
-      <ion-buttons end>
-          <button ion-button color="white" (click)="done()" style="font-weight: normal"> 
-            确定
-          </button>
-      </ion-buttons>
     </ion-toolbar>
 </ion-header>
  
 <ion-content no-padding>
-    <ion-item no-lines> 
-      <ion-avatar item-start>
-        <img src="assets/imgs/old_password.png"/>
-      </ion-avatar>
-      <ion-input type="password" placeholder="请输入原密码" maxlength="20" [(ngModel)]="oldPassword"></ion-input>
-    </ion-item>
-    <div class="ty-line1" style="margin-left: 10px;"></div>
-    <ion-item no-lines>
-      <ion-avatar item-start>
-        <img src="assets/imgs/new_password.png" >
-      </ion-avatar>
-      <ion-input type="password" placeholder="请输入新密码" maxlength="20" [(ngModel)]="newPassword"></ion-input>
-    </ion-item>
-    <div class="ty-line1" style="margin-left: 10px;"></div>
-    <ion-item no-lines>
-      <ion-avatar item-start>
-        <img src="assets/imgs/repeat_password.png" >
-      </ion-avatar>
-      <ion-input type="password" placeholder="请重复输入密码" maxlength="20" [(ngModel)]="confirmPassword"></ion-input>
-    </ion-item>
+  <form>
+      <ion-item no-lines> 
+          <ion-avatar item-start>
+            <img src="assets/imgs/old_password.png"/>
+          </ion-avatar>
+          <ion-input type="password" name="oldPassword" placeholder="请输入原密码" maxlength="20" [(ngModel)]="oldPassword"></ion-input>
+        </ion-item>
+        <div class="ty-line1" style="margin-left: 10px;"></div>
+        <ion-item no-lines>
+          <ion-avatar item-start>
+            <img src="assets/imgs/new_password.png" >
+          </ion-avatar>
+          <ion-input type="password" name="newPassword" placeholder="请输入新密码" maxlength="20" [(ngModel)]="newPassword"></ion-input>
+        </ion-item>
+        <div class="ty-line1" style="margin-left: 10px;"></div>
+        <ion-item no-lines>
+          <ion-avatar item-start>
+            <img src="assets/imgs/repeat_password.png" >
+          </ion-avatar>
+          <ion-input type="password" name="confirmPassword" placeholder="请重复输入密码" maxlength="20" [(ngModel)]="confirmPassword"></ion-input>
+        </ion-item>
+  </form>
     <p style="margin-left: 15px;color: gray;font-size: 1.5rem;">密码由6-20位字母或数字组成</p>
 
+    <ion-row style="margin: 15px;">
+      <ion-col>
+        <button ion-button (click)="done()" block>确定</button>
+      </ion-col>
+    </ion-row>
 </ion-content>
