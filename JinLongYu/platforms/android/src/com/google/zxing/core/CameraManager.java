@@ -25,6 +25,7 @@ import android.graphics.Rect;
 import android.hardware.Camera;
 import android.os.Build;
 import android.os.Handler;
+import android.util.DisplayMetrics;
 import android.view.SurfaceHolder;
 
 import com.androidcat.jly.utils.log.LogU;
@@ -241,12 +242,26 @@ public final class CameraManager {
 	 * @return The rectangle to draw on screen in window coordinates.
 	 */
 	public Rect getFramingRect() {
-		Point screenResolution = configManager.getScreenResolution();
 		if (framingRect == null) {
 			if (camera == null) {
 				return null;
 			}
-			int width = screenResolution.x * 3 / 4;
+			Point screenResolution = configManager.getScreenResolution();
+			if (screenResolution == null) {
+				// Called early, before init even finished
+				return null;
+			}
+			/* 扫描框修改 */
+			DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+			int width = (int) (metrics.widthPixels * 0.6);
+			int height = (int) (width * 0.9);
+
+			int leftOffset = (screenResolution.x - width) / 2;
+			int topOffset = (screenResolution.y - height) / 4;
+			framingRect = new Rect(leftOffset, topOffset, leftOffset + width,
+					topOffset + height);
+
+			/*int width = screenResolution.x * 3 / 4;
 			if (width < MIN_FRAME_WIDTH) {
 				width = MIN_FRAME_WIDTH;
 			} else if (width > MAX_FRAME_WIDTH) {
@@ -266,9 +281,10 @@ public final class CameraManager {
 			int leftOffset = (screenResolution.x - width) / 2;
 			int topOffset = (screenResolution.y - height) / 2;
 			framingRect = new Rect(leftOffset, topOffset, leftOffset + width,
-					topOffset + height);
+					topOffset + height);*/
 			LogU.d(TAG, "Calculated framing rect: " + framingRect);
 		}
+
 		return framingRect;
 	}
 
