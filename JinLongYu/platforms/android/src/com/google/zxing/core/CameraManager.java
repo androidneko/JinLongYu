@@ -252,14 +252,24 @@ public final class CameraManager {
 				return null;
 			}
 			/* 扫描框修改 */
-			DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+			/*DisplayMetrics metrics = context.getResources().getDisplayMetrics();
 			int width = (int) (metrics.widthPixels * 0.6);
 			int height = (int) (width * 0.9);
 
 			int leftOffset = (screenResolution.x - width) / 2;
 			int topOffset = (screenResolution.y - height) / 4;
 			framingRect = new Rect(leftOffset, topOffset, leftOffset + width,
-					topOffset + height);
+					topOffset + height);*/
+
+			//修改之后
+
+			int width = screenResolution.x * 7 / 10;
+			int height = screenResolution.y * 5 / 10;
+
+			int leftOffset = (screenResolution.x - width) / 2;
+			int topOffset = (screenResolution.y - height) / 3;
+
+			framingRect = new Rect(leftOffset, topOffset, leftOffset + width, topOffset + height);
 
 			/*int width = screenResolution.x * 3 / 4;
 			if (width < MIN_FRAME_WIDTH) {
