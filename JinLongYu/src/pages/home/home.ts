@@ -38,6 +38,14 @@ export class HomePage extends BasePage{
         this.navCtrl.setRoot("LoginPage");
       });
     });
+
+    events.subscribe("triggerTab", (data => {
+      this.tabs.select(data.index);
+      setTimeout(()=>{
+        this.events.publish('tabChanged', data);
+      }, 500);
+      
+    }));
   }
 
   ionViewDidEnter(){

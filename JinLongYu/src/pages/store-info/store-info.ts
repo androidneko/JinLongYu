@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController, AlertController, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, AlertController, ModalController, Events } from 'ionic-angular';
 import { BasePage } from '../base/base';
 import { TyNetworkServiceProvider } from '../../providers/ty-network-service/ty-network-service';
 import { AppGlobal, AppServiceProvider } from '../../providers/app-service/app-service';
@@ -70,9 +70,15 @@ export class StoreInfoPage extends BasePage{
     public alertCtrl:AlertController,
     public modalCtrl: ModalController,
     public net: TyNetworkServiceProvider,
+    public events:Events,
     public device: DeviceIntefaceServiceProvider,
     public toastCtrl: ToastController) {
     super(navCtrl,navParams,toastCtrl);
+    
+    events.subscribe('tabChanged',(data)=>{
+      this.qrCode = data.qrCode;
+      this.getWareHouseInfo();
+    });
   }
 
   ionViewWillEnter(){
@@ -82,6 +88,10 @@ export class StoreInfoPage extends BasePage{
   ionViewDidLoad() {
     console.log('ionViewDidLoad StoreInfoPage');
     this.getDict();
+  }
+
+  ionViewWillUnload(){
+    this.events.unsubscribe('tabChanged');
   }
 
   scan(){

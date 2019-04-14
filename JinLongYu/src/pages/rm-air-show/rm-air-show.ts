@@ -91,12 +91,13 @@ export class RmAirShowPage extends BasePage{
     }, true);
   }
 
-  post(){
-    this.net.httpPost(AppGlobal.API.saveShowMechanicalVentilationById, this.param, 
-      (resp) => {
-        this.toast("提交成功!");
-    }, (error) => {
-      this.toast(error);
-    }, true);
+  back(){
+    this.navCtrl.pop();
+    // this.net.httpPost(AppGlobal.API.saveShowMechanicalVentilationById, this.param, 
+    //   (resp) => {
+    //     this.toast("提交成功!");
+    // }, (error) => {
+    //   this.toast(error);
+    // }, true);
   }
 }

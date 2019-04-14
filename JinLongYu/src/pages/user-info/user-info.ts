@@ -40,7 +40,7 @@ export class UserInfoPage extends BasePage{
   }
 
   gotoSettings(){
-    this.navCtrl.push("ModifyPwdPage");
+    this.navCtrl.push("SettingsPage");
   }
 
   logout(){

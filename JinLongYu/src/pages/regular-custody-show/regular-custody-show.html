@@ -48,13 +48,13 @@
 
         <ion-item >
             <ion-label>备注</ion-label>
-            <ion-input item-end placeholder="请输入备注" [(ngModel)]="param.showRemark"></ion-input>
+            <ion-input item-end placeholder="请输入备注" [(ngModel)]="param.showRemark" readonly="true"></ion-input>
         </ion-item>
     </ion-list>
 
     <ion-row style="margin: 10px;">
       <ion-col>
-        <button ion-button (click)="post()" block>提交</button>
+        <button ion-button (click)="back()" block>返回</button>
       </ion-col>
     </ion-row>
 </ion-content>

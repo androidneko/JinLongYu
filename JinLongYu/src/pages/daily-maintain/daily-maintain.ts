@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, Events } from 'ionic-angular';
 import { BasePage } from '../base/base';
 import { AppGlobal, AppServiceProvider } from '../../providers/app-service/app-service';
+import { DeviceIntefaceServiceProvider } from '../../providers/device-inteface-service/device-inteface-service';
 
 /**
  * Generated class for the DailyMaintainPage page.
@@ -18,7 +19,7 @@ import { AppGlobal, AppServiceProvider } from '../../providers/app-service/app-s
 export class DailyMaintainPage extends BasePage{
 
   posts:string = "";
-  constructor(public navCtrl: NavController, public navParams: NavParams,public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public events:Events,public device: DeviceIntefaceServiceProvider,public toastCtrl: ToastController) {
     super(navCtrl,navParams,toastCtrl);
   }
 
@@ -28,6 +29,14 @@ export class DailyMaintainPage extends BasePage{
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DailyMaintainPage');
+  }
+
+  scan(){
+    this.device.push("qrCodeScan","扫描仓库二维码",(qrcode)=>{
+      this.events.publish('triggerTab', {index:1,qrCode:qrcode});
+    },(err)=>{
+      this.toast(err);
+    });
   }
 
   checkWareHouse(){
