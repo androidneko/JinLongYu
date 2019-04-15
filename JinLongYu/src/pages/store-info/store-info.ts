@@ -88,6 +88,7 @@ export class StoreInfoPage extends BasePage{
   ionViewDidLoad() {
     console.log('ionViewDidLoad StoreInfoPage');
     this.getDict();
+    //this.getWareHouseInfo();
   }
 
   ionViewWillUnload(){

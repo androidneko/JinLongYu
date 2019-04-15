@@ -85,7 +85,7 @@ export class FumigationPage extends BasePage{
         warehouseCode:AppGlobal.wareHouse.warehouseCode
       }, 
       (resp) => {
-        if (resp.content && resp.content != null){
+        if (resp.content && resp.content != null && resp.content.id != null){
           this.param = resp.content;
           this.param['loginName'] = AppServiceProvider.getInstance().userinfo.loginName;
           this.param['sessionId'] = AppServiceProvider.getInstance().userinfo.token;
