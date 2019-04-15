@@ -120,6 +120,7 @@ export class StoreInfoPage extends BasePage{
       }, 
       (resp) => {
         this.info = resp.content;
+        this.info.storekeeperPic = this.picUrl+this.info.storekeeperPic;
         this.info.ventilationSystemImg = this.picUrl+this.info.ventilationSystemImg;
         this.info.measuringPointImg = this.picUrl+this.info.measuringPointImg;
         AppGlobal.wareHouse = this.info;

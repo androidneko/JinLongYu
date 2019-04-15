@@ -34,7 +34,7 @@ export class RegularMaintainPage extends BasePage{
 
   scan(){
     this.device.push("qrCodeScan","扫描仓库二维码",(qrcode)=>{
-      this.events.publish('triggerTab', {index:1,qrCode:qrcode});
+      this.events.publish('triggerTab', {index:0,qrCode:qrcode});
     },(err)=>{
       this.toast(err);
     });

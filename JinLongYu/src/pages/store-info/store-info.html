@@ -34,7 +34,7 @@
   <ion-item (click)="aletBigImg(info.storekeeperPic)">
     <ion-label>保管员头像</ion-label>
     <ion-note item-end style="width: 65%">
-      <img-lazy-load default="assets/imgs/default_square_icon.png" src="{{info.storekeeperPic}}"></img-lazy-load>
+      <img-lazy-load class="avatar" default="assets/imgs/default_square_icon.png" src="{{info.storekeeperPic}}"></img-lazy-load>
     </ion-note>
   </ion-item>
 
@@ -111,14 +111,14 @@
   <ion-item (click)="aletBigImg(info.ventilationSystemImg)">
     <ion-label>通风系统</ion-label>
     <ion-note item-end style="width: 65%">
-      <img-lazy-load default="assets/imgs/default_square_icon.png" src="{{info.ventilationSystemImg}}"></img-lazy-load>
+      <img-lazy-load class="comm" default="assets/imgs/default_square_icon.png" src="{{info.ventilationSystemImg}}"></img-lazy-load>
     </ion-note>
   </ion-item>
 
   <ion-item (click)="aletBigImg(info.measuringPointImg)">
     <ion-label>测温布点</ion-label>
     <ion-note item-end style="width: 65%">
-      <img-lazy-load default="assets/imgs/default_square_icon.png" src="{{info.measuringPointImg}}"></img-lazy-load>
+      <img-lazy-load class="comm" default="assets/imgs/default_square_icon.png" src="{{info.measuringPointImg}}"></img-lazy-load>
     </ion-note>
   </ion-item>
 </ion-list>

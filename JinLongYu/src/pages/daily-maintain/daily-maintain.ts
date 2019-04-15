@@ -33,7 +33,7 @@ export class DailyMaintainPage extends BasePage{
 
   scan(){
     this.device.push("qrCodeScan","扫描仓库二维码",(qrcode)=>{
-      this.events.publish('triggerTab', {index:1,qrCode:qrcode});
+      this.events.publish('triggerTab', {index:0,qrCode:qrcode});
     },(err)=>{
       this.toast(err);
     });
@@ -97,29 +97,21 @@ export class DailyMaintainPage extends BasePage{
     if(this.posts == '管理人员'){
       return;
     }
-    if (this.checkWareHouse()){
-      this.navCtrl.push("PingEquipmentPage");
-    }
+    this.navCtrl.push("PingEquipmentPage");
   }
 
   gotoPingGearsRecord(){
-    if (this.checkWareHouse()){
-      this.navCtrl.push("PingEquipmentRecordsPage");
-    }
+    this.navCtrl.push("PingEquipmentRecordsPage");
   }
 
   gotoTongGears(){
     if(this.posts == '管理人员'){
       return;
     }
-    if (this.checkWareHouse()){
-      this.navCtrl.push("TongEquipmentPage");
-    }
+    this.navCtrl.push("TongEquipmentPage");
   }
 
   gotoTongGearsRecord(){
-    if (this.checkWareHouse()){
-      this.navCtrl.push("TongEquipmentRecordsPage");
-    }
+    this.navCtrl.push("TongEquipmentRecordsPage");
   }
 }

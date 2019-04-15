@@ -1,10 +1,16 @@
 page-store-info {
 
-    img-lazy-load{
+    .avatar{
+        img{
+            width:60px;
+            height:60px;
+        }
+    }
+
+    .comm{
         img{
             width:120px;
             height:60px;
         }
     }
-
 }
